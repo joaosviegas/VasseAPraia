@@ -1,0 +1,167 @@
+.data-containers {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "warnings warnings"
+    "sea uv";
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  margin-bottom: 1.5rem;
+  align-content: center;
+}
+
+.data-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Warnings Card */
+.warnings-card {
+  grid-area: warnings;
+  background: #ffffff;
+  border-radius: 12px;
+  border-left: 4px solid #000000;
+}
+
+.warnings-card h3, .sea-card h3, .uv-card h3 {
+  margin-bottom: 15px;
+  display: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.warning-item {
+  margin: 1rem;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.warning-item:last-child {
+  border-bottom: none;
+}
+
+.warning-location {
+  font-weight: bold;
+  color: black;
+}
+
+.warning-type {
+  font-weight: bold;
+  color: #d39e00;
+}
+
+.warning-text {
+  display: block;
+  margin-top: 0.5rem;
+  color: #856404;
+}
+
+.warning-level.yellow {
+  color: #856404;
+}
+
+.warning-level.orange {
+  color: #fd7e14;
+}
+
+.warning-level.red {
+  color: #dc3545;
+}
+
+.warning-time {
+  display: block;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* UV Index Card */
+.uv-card {
+  grid-area: uv;
+  padding: 1.5rem;
+  border-left: 4px solid #ffd700;
+}
+
+.uv-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.uv-index {
+  font-weight: 600;
+  color: #1864ab;
+}
+
+/* Sea Card */
+.sea-card {
+  grid-area: sea;
+  border-left: 4px solid #1864ab;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sea-item {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sea-location {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1864ab;
+  margin-bottom: 0.5rem;
+}
+
+.sea-details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sea-temperature {
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sea-tide {
+  font-size: 0.95rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sea-tide i {
+  color: #1864ab;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .data-containers {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "warnings"
+      "sea"
+      "uv";
+  }
+}
