@@ -458,7 +458,7 @@ def evaluate_station(station_data):
         metrics['average_wind_speed'] = total_wind / valid_hours
     
     # Add warnings for extreme conditions
-    if metrics['average_wind_speed'] > 10:
+    if metrics['average_wind_speed'] > 10 and metrics['average_wind_speed'] < 20:
         total_points -= metrics['average_wind_speed'] * 0.25  # Additional penalty for consistently strong winds
         
     elif metrics['average_wind_speed'] >= 20:

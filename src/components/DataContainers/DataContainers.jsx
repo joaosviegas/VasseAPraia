@@ -29,7 +29,7 @@ const DataContainers = ({ warnings = [], seaData = [], uvData = [] }) => {
           <div className="sea-item" key={index}>
             <span className="sea-location">{sea.location}:</span>
             <div className="sea-details">
-              <span className="sea-temperature"><i className="fas fa-thermometer-half"></i> {sea.sea_temp}°C</span>
+              <span className="sea-temperature"><i className="fas fa-thermometer-half"></i> Temperatura do Mar: {sea.sea_temp}°C</span>
               <span className="sea-tide"><i className="fas fa-arrow-up"></i> Maré Cheia: {sea.full_tide}m</span>
               <span className="sea-tide"><i className="fas fa-arrow-down"></i> Maré Baixa: {sea.low_tide}m</span>
             </div>
