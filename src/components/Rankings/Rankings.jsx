@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Tooltip from '../common/Tooltip';
 import './Rankings.css';
 
 const Rankings = ({ rankingsData = [], lastUpdated }) => {
@@ -25,12 +26,24 @@ const Rankings = ({ rankingsData = [], lastUpdated }) => {
     
     return warnings.map((warning, index) => {
       if (warning.includes('wind')) 
-        return <span key={index} className="warning wind-warning"><i className="fas fa-wind"></i></span>;
-      if (warning.includes('rain')) 
-        return <span key={index} className="warning rain-warning"><i className="fas fa-cloud-rain"></i></span>;
-      return null;
-    });
-  };
+        return (
+          <Tooltip key={index} text="Esta região registou ventos superiores a 20 km/h">
+          <span className="warning wind-warning">
+            <i className="fas fa-wind"></i>
+          </span>
+        </Tooltip>
+      );
+    if (warning.includes('rain')) 
+      return (
+        <Tooltip key={index} text="Esta região registou mais de 10 mm de chuva">
+          <span className="warning rain-warning">
+            <i className="fas fa-cloud-rain"></i>
+          </span>
+        </Tooltip>
+      );
+    return null;
+  });
+};
 
   return (
     <section className="rankings">

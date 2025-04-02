@@ -1,0 +1,45 @@
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip-text {
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #333;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #eee;
+  }
+  
+  .tooltip-text::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: white;
+  }
+  
+  /* Media query para telas pequenas */
+  @media (max-width: 768px) {
+    .tooltip-text {
+      right: auto;
+      left: calc(100% + 10px);
+    }
+    
+    .tooltip-text::before {
+      left: auto;
+      right: 100%;
+      border-left-color: transparent;
+      border-right-color: white;
+    }
+  }
