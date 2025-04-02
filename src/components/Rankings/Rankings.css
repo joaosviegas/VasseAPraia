@@ -128,11 +128,11 @@
   color: #666;
 }
 
-.comfort {
+.metrics-primary {
   position: relative;
 }
 
-.comfort::before {
+.metrics-primary::before {
   content: "";
   position: absolute;
   top: -10px;
