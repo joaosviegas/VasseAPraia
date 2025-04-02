@@ -36,7 +36,7 @@ react-weather-app
 │   ├── beach_ranker.py
 │   └── requirements.txt
 ├── commomn
-│   ├── Tooltip.sjsx
+│   ├── Tooltip.jsx
 │   └── Tooltip.css
 ├── src
 │   ├── components
