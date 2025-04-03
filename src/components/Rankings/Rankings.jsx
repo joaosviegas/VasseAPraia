@@ -88,7 +88,7 @@ const Rankings = ({ rankingsData = [], lastUpdated }) => {
         <h4>Legenda:</h4>
         <div className="legend-item"><span className="warning wind-warning"><i className="fas fa-wind"></i></span> Aviso de Ventos fortes (&gt;20 km/h)</div>
         <div className="legend-item"><span className="warning rain-warning"><i className="fas fa-cloud-rain"></i></span> Chuva total (&gt;10 mm)</div>
-        <div className="legend-item">Índice: 
+        <div className="legend-index">Índice: 
           <span className="comfort-indicator excellent">75-100</span>
           <span className="comfort-indicator good">50-74</span>
           <span className="comfort-indicator moderate">25-49</span>

@@ -198,6 +198,15 @@
   gap: 10px;
 }
 
+.legend-index {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
 .comfort-indicator {
   display: inline-block;
   padding: 2px 8px;
