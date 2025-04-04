@@ -31,7 +31,6 @@
   color: white;
 }
 
-/* Layout para desktop */
 .content-wrapper {
   display: flex;
   gap: 20px;
@@ -48,7 +47,7 @@
   flex: 2; /* Ocupa 2/7 do espaço disponível */
 }
 
-/* Ajustes para telas menores - muda para layout vertical */
+/* Mobile Optimized */
 @media (max-width: 1024px) {
   .content-wrapper {
     flex-direction: column;
@@ -59,3 +58,4 @@
     width: 100%;
   }
 }
+

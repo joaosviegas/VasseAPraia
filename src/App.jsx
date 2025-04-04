@@ -5,6 +5,7 @@ import Features from './components/Features/Features';
 import DataContainers from './components/DataContainers/DataContainers';
 import Rankings from './components/Rankings/Rankings';
 import Footer from './components/Footer/Footer';
+import RollingBlock from './components/RollingBlock/RollingBlock';
 import './App.css';
 import { formatDateTime } from './utils/dateUtils';
 
@@ -16,6 +17,16 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
+
+  const [carouselData] = useState([
+    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png", name: "Praia 1" },
+    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png", name: "Praia 2" },
+    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png", name: "Praia 3" },
+    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png", name: "Praia 4" },
+    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png", name: "Praia 5" },
+    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png", name: "Praia 6" },
+    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png", name: "Praia 7" }
+  ]);
 
   const fetchRankings = () => {
     setIsLoading(true);
@@ -103,6 +114,11 @@ const App = () => {
             </div>
           </>
         ) : null}
+      </section>
+      <section className="carousel-section">
+        <div className="container">
+          <RollingBlock data={carouselData} />
+        </div>
       </section>
       <Footer />
     </div>
