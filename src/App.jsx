@@ -6,6 +6,7 @@ import DataContainers from './components/DataContainers/DataContainers';
 import Rankings from './components/Rankings/Rankings';
 import Footer from './components/Footer/Footer';
 import './App.css';
+import { formatDateTime } from './utils/dateUtils';
 
 const App = () => {
   const [rankingsData, setRankingsData] = useState(null);
@@ -82,17 +83,24 @@ const App = () => {
           <>
             <h2 className="rankings-title">Melhores Sítios para fazer Praia Hoje</h2>
             <div className="rankings-header">
-              <p className="update-time">Atualizado às: {new Date(lastUpdated).toLocaleString()}</p>
+              <p className="update-time">Atualizado às: {formatDateTime(lastUpdated)}</p>
             </div>
-            <DataContainers 
-              warnings={warnings} 
-              seaData={seaData} 
-              uvData={uvData} 
-            />
-            <Rankings 
-              rankingsData={rankingsData} 
-              lastUpdated={lastUpdated} 
-            />
+            
+            <div className="content-wrapper">
+              <div className="rankings-wrapper">
+              <Rankings 
+                rankingsData={rankingsData} 
+                lastUpdated={lastUpdated} 
+              />
+              </div>
+              <div className="data-wrapper">
+              <DataContainers 
+                warnings={warnings} 
+                seaData={seaData} 
+                uvData={uvData} 
+              />
+              </div>
+            </div>
           </>
         ) : null}
       </section>

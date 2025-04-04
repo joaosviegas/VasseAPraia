@@ -1,25 +1,90 @@
 import React from 'react';
+import Tooltip from '../common/Tooltip';
+import { formatDateTime } from '../../utils/dateUtils';
 import './DataContainers.css';
 
 const DataContainers = ({ warnings = [], seaData = [], uvData = [] }) => {
+
+  const getWarningLevelClass = (level) => {
+    if (!level) return '';
+
+    switch (level) {
+      case 'yellow':
+        return 'warning-yellow';
+      case 'orange':
+        return 'warning-orange';
+      case 'red':
+        return 'warning-red';
+      default:
+        return '';
+    }
+  }
+
+  const getUVLevelClass = (uvIndex) => {
+    if (!uvIndex) return '';
+
+    if (uvIndex < 3) {
+      return 'low';
+    } else if (uvIndex < 6) {
+      return 'moderate';
+    } else if (uvIndex < 8) {
+      return 'high';
+    } else if (uvIndex < 11) {
+      return 'very-high';
+    } else {
+      return 'extreme';
+    }
+  }
+
+  const getUVLevelClassText = (uvIndex) => {
+    if (!uvIndex) return '';
+
+    if (uvIndex < 3) {
+      return 'UV Baixo';
+    } else if (uvIndex < 6) {
+      return 'UV Moderado';
+    } else if (uvIndex < 8) {
+      return 'UV Alto';
+    } else if (uvIndex < 11) {
+      return 'UV Muito ALto - Evitar exposição ao sol';
+    } else {
+      return 'UV Extremo - Evitar exposição ao sol';
+    }
+  }
+
   return (
     <div className="data-containers">
       {/* Warnings Card */}
       <div className="data-card warnings-card">
         <h3><i className="fas fa-exclamation-triangle"></i> Avisos</h3>
         {warnings.length > 0 ? warnings.map((warning, index) => (
-          <div className="warning-item" key={index}>
-            <span className="warning-location">{warning.location}: </span>
-            <span className="warning-type">{warning.type}</span>
+          <div className={`warning-item ${getWarningLevelClass(warning.level)}`}key={index}>
+            <div className="warning-header">
+              <span className="warning-location">{warning.location}: </span>
+              <span className="warning-type">{warning.type}</span>
+            </div>
             <span className="warning-text">{warning.text}</span>
-            <span className={`warning-level ${warning.level?.toLowerCase()}`}>({warning.level})</span>
             <span className="warning-time">
-              De {new Date(warning.start).toLocaleString()} até {new Date(warning.end).toLocaleString()}
+              De {formatDateTime(warning.start)} até {formatDateTime(warning.end)}
             </span>
           </div>
         )) : (
           <p>Sem avisos ativos 😎</p>
         )}
+      </div>
+
+      {/* UV Index */}
+      <div className="data-card uv-card">
+        <h3><i className="fas fa-sun"></i> Índice UV</h3>
+        {uvData.map((uv, index) => (
+          <div className={`uv-item ${getUVLevelClass(uv.uv_index)}`} key={index}>
+            <span className="uv-location">{uv.location}:</span>
+            <Tooltip text = {getUVLevelClassText(uv.uv_index)}> 
+              <span className="uv-index">{uv.uv_index}</span>
+            </Tooltip>
+            <span className="uv-time">({uv.uv_time})</span>
+          </div>
+        ))}
       </div>
 
       {/* Sea Conditions */}
@@ -37,17 +102,6 @@ const DataContainers = ({ warnings = [], seaData = [], uvData = [] }) => {
         ))}
       </div>
 
-      {/* UV Index */}
-      <div className="data-card uv-card">
-        <h3><i className="fas fa-sun"></i> Índice UV</h3>
-        {uvData.map((uv, index) => (
-          <div className="uv-item" key={index}>
-            <span className="uv-location">{uv.location}:</span>
-            <span className="uv-index">{uv.uv_index}</span>
-            <span className="uv-time">({uv.uv_time})</span>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

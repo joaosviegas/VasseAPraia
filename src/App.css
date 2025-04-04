@@ -30,3 +30,32 @@
   background-color: #1a73e8;
   color: white;
 }
+
+/* Layout para desktop */
+.content-wrapper {
+  display: flex;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.rankings-wrapper {
+  flex: 5; /* Ocupa 5/7 do espaço disponível */
+}
+
+.data-wrapper {
+  flex: 2; /* Ocupa 2/7 do espaço disponível */
+}
+
+/* Ajustes para telas menores - muda para layout vertical */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .rankings-wrapper,
+  .data-wrapper {
+    width: 100%;
+  }
+}
