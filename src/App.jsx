@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Features from './components/Features/Features';
@@ -25,6 +25,8 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const rankingsContainerRef = useRef(null);
 
   const [carouselData] = useState([
     { imageUrl: logo1, altText: 'Calheta Município' },
@@ -36,7 +38,38 @@ const App = () => {
     { imageUrl: logo7, altText: 'São Vicente Município' }
   ]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        if (entries[0].isIntersecting && !hasLoaded && !isLoading) {
+          fetchRankings();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    
+    if (rankingsContainerRef.current) {
+      observer.observe(rankingsContainerRef.current);
+    }
+    
+    return () => {
+      if (rankingsContainerRef.current) {
+        observer.unobserve(rankingsContainerRef.current);
+      }
+    };
+  }, [hasLoaded, isLoading]);
+
   const fetchRankings = () => {
+
+    if (hasLoaded) {
+      const rankingsSection = document.getElementById('rankings-container');
+    if (rankingsSection) {
+      rankingsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    return;
+    }
+
     setIsLoading(true);
     setError(null);
     
@@ -61,6 +94,7 @@ const App = () => {
           setUvData(data.uv);
           setWarnings(data.warnings);
           setSeaData(data.sea);
+          setHasLoaded(true);
         } else {
           setError(data.message || 'Erro desconhecido');
         }
@@ -82,7 +116,7 @@ const App = () => {
       <Header />
       <Hero onFindBeach={handleFindBeach} />
       <Features />
-      <section id="rankings-container">
+      <section id="rankings-container" ref = {rankingsContainerRef}>
         {isLoading ? (
           <div className="loading">
             <i className="fas fa-spinner fa-spin" style={{ fontSize: '3rem', color: '#1a73e8' }}></i>

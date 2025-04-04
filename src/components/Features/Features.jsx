@@ -9,6 +9,11 @@ const Features = () => {
       {/* Background Grid */}
       <div className="grid"></div>
       
+      {/* Title */}
+      <div className="title">
+        <h2>Recursos</h2>
+      </div>
+
       <div className="features">
         <FeatureCard 
           icon="fas fa-sun"

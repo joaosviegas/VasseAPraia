@@ -21,13 +21,13 @@
     font-size: 4rem;
     color: #2196f3;
     position:absolute;
-    top: 1em; /* Posiciona o ícone no topo */
+    top: 1em;
     left: 1em;
     transform: translateX(-50%);
   }
   
   .feature h2 {
-    font-size: 2.4rem;
+    font-size: 2rem;
     margin-top: 0;
     margin-bottom: 15px;
   }
@@ -41,10 +41,10 @@
 
 @media (max-width: 576px) {
     .features {
-      grid-template-columns: 1fr; /* 1 coluna em celulares */
+      grid-template-columns: 1fr; 
     }
     
     .feature {
-      padding: 8em 1.5em 2em; /* Padding menor em telas pequenas */
+      padding: 8em 1.5em 2em;
     }
   }
