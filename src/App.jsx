@@ -8,6 +8,13 @@ import Footer from './components/Footer/Footer';
 import RollingBlock from './components/RollingBlock/RollingBlock';
 import './App.css';
 import { formatDateTime } from './utils/dateUtils';
+import logo1 from './assets/images/calheta-municipio-logo.png';
+import logo2 from './assets/images/camara-de-lobos-municipio-logo.png';
+import logo3 from './assets/images/frente-mar-funchal-logo.png';
+import logo4 from './assets/images/funchal-municipio-logo.png';
+import logo5 from './assets/images/ipma-logo.png';
+import logo6 from './assets/images/madeira-island-logo.png';
+import logo7 from './assets/images/sao-vicente-municipio-logo.png';
 
 const App = () => {
   const [rankingsData, setRankingsData] = useState(null);
@@ -19,13 +26,13 @@ const App = () => {
   const [lastUpdated, setLastUpdated] = useState(null);
 
   const [carouselData] = useState([
-    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png", name: "Praia 1" },
-    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png", name: "Praia 2" },
-    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png", name: "Praia 3" },
-    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png", name: "Praia 4" },
-    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png", name: "Praia 5" },
-    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png", name: "Praia 6" },
-    { imageUrl: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png", name: "Praia 7" }
+    { imageUrl: logo1, altText: 'Calheta Município' },
+    { imageUrl: logo2, altText: 'Câmara de Lobos Município' },
+    { imageUrl: logo3, altText: 'Frente Mar Funchal' },
+    { imageUrl: logo4, altText: 'Funchal Município' },
+    { imageUrl: logo5, altText: 'IPMA - Intituto Português do Mar e Atmosfera' },
+    { imageUrl: logo6, altText: 'Madeira Islands' },
+    { imageUrl: logo7, altText: 'São Vicente Município' }
   ]);
 
   const fetchRankings = () => {
