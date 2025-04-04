@@ -60,7 +60,7 @@ const DataContainers = ({ warnings = [], seaData = [], uvData = [] }) => {
         {warnings.length > 0 ? warnings.map((warning, index) => (
           <div className={`warning-item ${getWarningLevelClass(warning.level)}`}key={index}>
             <div className="warning-header">
-              <span className="warning-location">{warning.location}: </span>
+              <span className="warning-location">{warning.location}:&nbsp;</span>
               <span className="warning-type">{warning.type}</span>
             </div>
             <span className="warning-text">{warning.text}</span>
