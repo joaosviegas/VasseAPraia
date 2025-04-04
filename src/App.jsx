@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import RollingBlock from './components/RollingBlock/RollingBlock';
 import './App.css';
 import { formatDateTime } from './utils/dateUtils';
+
 import logo1 from './assets/images/calheta-municipio-logo.png';
 import logo2 from './assets/images/camara-de-lobos-municipio-logo.png';
 import logo3 from './assets/images/frente-mar-funchal-logo.png';
