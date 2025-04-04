@@ -1,25 +1,32 @@
 import React from 'react';
 import './Features.css';
+import FeatureCard from './FeatureCard';
 
 const Features = () => {
   return (
     <section className="features">
-      <div className="feature">
-        <i className="fas fa-sun icon"></i>
-        <h2>Análise do Tempo</h2>
-        <p>Our algorithm analyzes real-time weather conditions from various stations across Madeira to find the ideal beach spot.</p>
-      </div>
-      <div className="feature">
-        <i className="fas fa-wind icon"></i>
-        <h2>Condições Atmosféricas</h2>
-        <p>We track wind speed and conditions to ensure you enjoy a comfortable and safe beach experience.</p>
-      </div>
-      <div className="feature">
-        <i className="fas fa-temperature-high icon"></i>
-        <h2>Avaliação de Temperatura</h2>
-        <p>Each beach is rated based on temperature patterns throughout the day, focusing on the peak hours from 10:00 to 18:00.</p>
-      </div>
+      {/* Grid de fundo */}
+      <div className="grid"></div>
+      
+      {/* Seus cards de recursos */}
+      <FeatureCard 
+        icon="fas fa-sun"
+        title="Previsão Metereológica"
+        description="Analise dados de temperatura, UV e índices de conforto para cada praia"
+      />
+      <FeatureCard 
+        icon="fas fa-sort-amount-down"
+        title="Ranking Inteligente"
+        description="Algoritmo que classifica praias baseado nas melhores condições de hoje"
+      />
+      <FeatureCard 
+        icon="fas fa-warning"
+        title="Avisos e Alertas"
+        description="Receba informação sobre avisos meteorológicos importantes"
+      />
+      {/* Outros feature cards... */}
     </section>
+    
   );
 };
 

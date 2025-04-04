@@ -4,6 +4,7 @@
   padding: 50px 20px;
   background-color: white;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .feature {
@@ -15,11 +16,14 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .feature:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: solid 4px #2196f3;
 }
 
 .icon {
@@ -36,4 +40,15 @@
 .feature p {
   font-size: 1rem;
   color: #666;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
+    linear-gradient(to bottom, #80808012 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 0;
 }

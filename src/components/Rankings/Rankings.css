@@ -176,7 +176,7 @@
 
 /* Legend */
 .legend {
-  max-width: 800px;
+  width: 100%;
   margin: 20px auto 0;
   background: white;
   padding: 15px;
