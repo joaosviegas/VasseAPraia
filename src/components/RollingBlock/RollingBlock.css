@@ -7,6 +7,11 @@
   }
 }
 
+.rolling-block {
+  background-color: white;
+  text-align: center;
+}
+
 .slider {
   background: white;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
@@ -15,6 +20,15 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+}
+
+.rolling-block-title h2{
+  font-size: 4rem !important;
+  padding-top: 20px;
+  background: linear-gradient(to right, #2196f3, #1976d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .slider::before,
