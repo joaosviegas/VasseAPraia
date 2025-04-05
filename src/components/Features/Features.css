@@ -25,7 +25,7 @@
   width: 100%;
   background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
     linear-gradient(to bottom, #80808012 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-size: 64px 64px;
   -t-mask-image: radial-grawebkidient(ellipse 80% 50% at 50% 0%, #000 70%, transparent 110%);
   mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 70%, transparent 110%);
   z-index: 0;
