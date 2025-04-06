@@ -58,6 +58,11 @@
   width: calc(350px * 14);
   align-items: center !important;
   height: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.slider:hover .slide-track {
+  animation-play-state: paused;
 }
 
 .slider .slide {

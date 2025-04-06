@@ -15,7 +15,9 @@ const RollingBlock = ({ data }) => {
         <div className="slide-track">
           {data.map((item, index) => (
             <div className="slide" key={index}>
-              <img src={item.imageUrl} alt={item.name || ''} />
+              <a href={item.url} target="_blank" rel="noopener noreferrer">
+                <img src={item.imageUrl} alt={item.altText || ''} />
+              </a>
             </div>
           ))}
           {data.slice(0, 7).map((item, index) => (

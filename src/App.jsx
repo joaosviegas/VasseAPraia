@@ -30,13 +30,13 @@ const App = () => {
   const rankingsContainerRef = useRef(null);
 
   const [carouselData] = useState([
-    { imageUrl: logo1, altText: 'Calheta Município' },
-    { imageUrl: logo2, altText: 'Câmara de Lobos Município' },
-    { imageUrl: logo3, altText: 'Frente Mar Funchal' },
-    { imageUrl: logo4, altText: 'Funchal Município' },
-    { imageUrl: logo5, altText: 'IPMA - Intituto Português do Mar e Atmosfera' },
-    { imageUrl: logo6, altText: 'Madeira Islands' },
-    { imageUrl: logo7, altText: 'São Vicente Município' }
+    { imageUrl: logo1, altText: 'Calheta Município', url: 'https://www.cmcalheta.pt' },
+    { imageUrl: logo2, altText: 'Câmara de Lobos Município', url: 'https://cm-camaradelobos.pt/' },
+    { imageUrl: logo3, altText: 'Frente Mar Funchal', url: 'https://frentemarfunchal.pt/' },
+    { imageUrl: logo4, altText: 'Funchal Município', url: 'https://www.cm-funchal.pt/' },
+    { imageUrl: logo5, altText: 'IPMA - Intituto Português do Mar e Atmosfera', url: 'https://www.ipma.pt/' },
+    { imageUrl: logo6, altText: 'Madeira Islands', url: 'https://visitmadeira.com/pt' },
+    { imageUrl: logo7, altText: 'São Vicente Município', url: 'https://visitsaovicente.pt/' },
   ]);
 
   useEffect(() => {
