@@ -96,7 +96,7 @@ const App = () => {
           setWarnings(data.warnings);
           setSeaData(data.sea);
           setHasLoaded(true);
-        } if (data.status === 'empty') {
+        } else if (data.status === 'empty') {
           setRankingsData({isEmpty: true});
           setLastUpdated(data.last_updated);
           setUvData(data.uv);

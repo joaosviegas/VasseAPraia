@@ -434,9 +434,10 @@ def evaluate_station(station_data):
                 metrics['total_sun_hours'] += 1
 
         # Wind calculations
-        if wind is not None and wind > 0:
-            total_wind += wind
-            valid_hours += 1
+        if wind is not None:
+            if wind > 0:
+                total_wind += wind
+                valid_hours += 1
             if wind > 20:
                 metrics['wind_gusts'] += 1
     
@@ -457,6 +458,7 @@ def evaluate_station(station_data):
 
     try:
         lastwind = station_data['readings'][-1].get('intensidadeVentoKM', 0) if station_data['readings'] else 0
+        lastwind = 0 if lastwind is None else lastwind
         if lastwind <= 10:
             total_points += 5
         elif lastwind >= 20:
@@ -543,9 +545,6 @@ def rank_stations(stations_data, madeira_stations_dict):
     rankings = []
 
     for station_id, data in stations_data.items():
-        # Skip if no readings are available
-        if not stations_data.get('readings'):
-            continue
 
         # Filter data for the time range (10:00h to 18:00h)
         filtered_data = filter_data_by_time_range(data)
