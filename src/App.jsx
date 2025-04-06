@@ -6,6 +6,7 @@ import DataContainers from './components/DataContainers/DataContainers';
 import Rankings from './components/Rankings/Rankings';
 import Footer from './components/Footer/Footer';
 import RollingBlock from './components/RollingBlock/RollingBlock';
+import InteractiveMap from './components/InteractiveMap/InteractiveMap';
 import './App.css';
 import { formatDateTime } from './utils/dateUtils';
 
@@ -161,6 +162,7 @@ const App = () => {
         <div className="container">
           <RollingBlock data={carouselData} />
         </div>
+        <InteractiveMap />
       </section>
       <Footer />
     </div>
