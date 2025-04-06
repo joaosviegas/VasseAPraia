@@ -49,7 +49,23 @@ def get_rankings():
         
         madeira_stations = get_madeira_stations(stations)
         stations_data = organize_data_by_station(weather, madeira_stations)
+
+        # Add defensive check for empty or malformed data
+        if not stations_data:
+            app.logger.error("Sem dados disponíveis...")
+            return jsonify({'status': 'error', 'message': 'Sem dados meteriológicos disponíveis'}), 404
+
+        # Add logging to check data structure
+        for station_id, data in stations_data.items():
+            if not data.get('readings'):
+                app.logger.warning(f"Station {station_id} has no readings")
+
         stations_data = sort_data_by_time(stations_data)
+
+        # Additional validation after sorting
+        if not any(data.get('readings') for data in stations_data.values()):
+            app.logger.error("No readings available after sorting")
+            return jsonify({'status': 'error', 'message': 'No time data available'}), 404
         
         # 3. Add validation before ranking
         if not stations_data:
@@ -110,7 +126,7 @@ def get_rankings():
 
         # 8. Return data
         return jsonify({
-            'status': 'success',
+            'status': 'empty' if not rankings else 'success',
             'last_updated': datetime.now().isoformat(),
             'rankings': formatted_rankings,
             'uv': formatted_uv,

@@ -96,7 +96,15 @@ const App = () => {
           setWarnings(data.warnings);
           setSeaData(data.sea);
           setHasLoaded(true);
-        } else {
+        } if (data.status === 'empty') {
+          setRankingsData({isEmpty: true});
+          setLastUpdated(data.last_updated);
+          setUvData(data.uv);
+          setWarnings(data.warnings);
+          setSeaData(data.sea);
+          setHasLoaded(true);
+        }
+        else {
           setError(data.message || 'Erro desconhecido');
         }
         setIsLoading(false);
@@ -142,10 +150,27 @@ const App = () => {
             
             <div className="content-wrapper">
               <div className="rankings-wrapper">
-              <Rankings 
-                rankingsData={rankingsData} 
-                lastUpdated={lastUpdated} 
-              />
+
+                {rankingsData.isEmpty ? (
+                  <div className="rankings-empty-state">
+                    <div className="placeholder-card">
+                      <div className="placeholder-icon">
+                        <i className="fas fa-moon"></i> 
+                      </div>
+                      <h3>Dados em Atualização</h3>
+                      <p>Os rankings das praias estão em atualização. Isto acontece normalmente durante a madrugada.</p>
+                      <p>Volta de manhã para ver os rankings atualizados!</p>
+                      <p className="placeholder-timestamp">
+                        Última verificação: {formatDateTime(lastUpdated)}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <Rankings 
+                    rankingsData={rankingsData} 
+                    lastUpdated={lastUpdated} 
+                  />
+                )}
               </div>
               <div className="data-wrapper">
               <DataContainers 

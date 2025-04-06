@@ -408,7 +408,7 @@ def evaluate_station(station_data):
     metrics = {
         'total_hours_above_20': 0,
         'total_sun_hours': 0,
-        'total_precipitation': station_data.get('total_precipitation', 0),
+        'total_precipitation': 0,
         'average_wind_speed': 0,
         'wind_gusts': 0,
         'comfort_index': 0,
@@ -440,6 +440,14 @@ def evaluate_station(station_data):
             if wind > 20:
                 metrics['wind_gusts'] += 1
     
+    if not station_data.get('readings', []):
+        # Return basic metrics if no readings are available
+        return {
+            'total_points': 0,
+            'metrics': metrics,
+            'warnings': ['No data available for this station']
+        }
+
     # Last wind and last precipitation penalties
     if stattiprecip := station_data['readings'][-1].get('precAcumulada', 0):
         if stattiprecip == 0:
@@ -447,15 +455,21 @@ def evaluate_station(station_data):
         elif stattiprecip > 0:
             total_points -= 5
 
-    if lastwind := station_data['readings'][-1].get('intensidadeVentoKM', 0):
+    try:
+        lastwind = station_data['readings'][-1].get('intensidadeVentoKM', 0) if station_data['readings'] else 0
         if lastwind <= 10:
             total_points += 5
         elif lastwind >= 20:
             total_points -= 5
+    except IndexError:
+        # Handle the case where readings might be empty
+        metrics['warnings'].append("Missing wind data")
 
     # Calculate averages
-    if valid_hours > 0:
+    if valid_hours > 0 and total_wind > 0:
         metrics['average_wind_speed'] = total_wind / valid_hours
+    else:
+        metrics['average_wind_speed'] = 0
     
     # Add warnings for extreme conditions
     if metrics['average_wind_speed'] > 10 and metrics['average_wind_speed'] < 20:
@@ -471,10 +485,13 @@ def evaluate_station(station_data):
 
     # Add warnings for extreme conditions
     max_hours = calc_valid_hours()
-    if metrics['total_sun_hours'] > max_hours:
-        total_points += max_hours * 5
-    else:
-        total_points += metrics['total_sun_hours'] * 5
+    if 'total_sun_hours' in metrics and max_hours > 0:
+        if metrics['total_sun_hours'] > max_hours:
+            total_points += max_hours * 5
+        elif metrics['total_sun_hours'] > max_hours:
+            total_points += max_hours * 5
+        else:
+            total_points += metrics['total_sun_hours'] * 5
     
     # Define weights for each factor (adjustable)
     WEIGHTS = {
@@ -526,6 +543,10 @@ def rank_stations(stations_data, madeira_stations_dict):
     rankings = []
 
     for station_id, data in stations_data.items():
+        # Skip if no readings are available
+        if not stations_data.get('readings'):
+            continue
+
         # Filter data for the time range (10:00h to 18:00h)
         filtered_data = filter_data_by_time_range(data)
 
