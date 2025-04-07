@@ -20,7 +20,7 @@ const RollingBlock = ({ data }) => {
               </a>
             </div>
           ))}
-          {data.slice(0, 7).map((item, index) => (
+          {data.slice(0, 8).map((item, index) => (
             <div className="slide" key={`repeat-${index}`}>
               <img src={item.imageUrl} alt={item.name || ''} />
             </div>

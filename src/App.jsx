@@ -17,6 +17,7 @@ import logo4 from './assets/images/funchal-municipio-logo.png';
 import logo5 from './assets/images/ipma-logo.png';
 import logo6 from './assets/images/madeira-island-logo.png';
 import logo7 from './assets/images/sao-vicente-municipio-logo.png';
+import logo8 from './assets/images/ilha-do-porto-santo-logo.png';
 
 const App = () => {
   const [rankingsData, setRankingsData] = useState(null);
@@ -37,6 +38,7 @@ const App = () => {
     { imageUrl: logo5, altText: 'IPMA - Intituto Português do Mar e Atmosfera', url: 'https://www.ipma.pt/' },
     { imageUrl: logo6, altText: 'Madeira Islands', url: 'https://visitmadeira.com/pt' },
     { imageUrl: logo7, altText: 'São Vicente Município', url: 'https://visitsaovicente.pt/' },
+    { imageUrl: logo8, altText: 'Ilha do Porto Santo', url: 'https://portosantobiosfera.madeira.gov.pt/pt/'}
   ]);
 
   useEffect(() => {
