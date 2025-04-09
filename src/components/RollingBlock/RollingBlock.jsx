@@ -7,7 +7,7 @@ const RollingBlock = ({ data }) => {
 
       <div className="rolling-block-header">
         <div className="rolling-block-title">
-          <h2>Com a presença de</h2>
+          <h3>Com a presença de</h3>
         </div>
       </div>
 

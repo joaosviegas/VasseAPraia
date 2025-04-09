@@ -3,7 +3,8 @@
     text-align: center;
     background-color: white;
   }
-  
+
+
   .map-container {
     display: flex;
     flex-direction: column;
@@ -24,7 +25,8 @@
   .svg-container {
     position: relative;
     width: 100%;
-    height: 373px;
+    height: 510px;
+    padding: 20px;
     background-color: #e6f7ff;
     border-radius: 10px;
     overflow: hidden;
@@ -34,10 +36,12 @@
   .concelhos-map,
   .interactive-areas {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 20px;
+    left: 20px; 
+    width: calc(100% - 40px); 
+    height: calc(100% - 40px);
+    transform: scale(1.05);
+    transform-origin: center center;
   }
   
   .base-map path {
@@ -72,7 +76,32 @@
     transform: translateY(-3px) scale(1.02);
   }
   
-  .region-info h3 {
-    margin-top: 0;
+  .map-section h2 {
+    text-align: center;
+    margin-left: 5rem;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #2196f3, #1976d2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .region-tooltip {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    padding: 8px 12px;
+    font-size: 14px;
+    pointer-events: none;
+    max-width: 500px;
+  }
+  
+  .tooltip-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tooltip-description {
+    margin: 4px 0 0;
+    font-size: 12px;
     color: #1a73e8;
   }

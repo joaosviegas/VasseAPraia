@@ -22,9 +22,9 @@
   width: 100%;
 }
 
-.rolling-block-title h2{
-  font-size: 4rem !important;
-  padding-top: 20px;
+.rolling-block-title h3{
+  font-size: 3rem !important;
+  padding-top: 10px;
   background: linear-gradient(to right, #2196f3, #1976d2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

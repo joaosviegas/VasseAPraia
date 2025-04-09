@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, render_template
-from flask_cors import CORS  # For cross-origin requests
+from flask_cors import CORS
 from datetime import datetime
 import os
-import requests  # If you're using direct requests
+import requests
 from beach_ranker import (  # Explicit imports
     url_stations, 
     url_weather,
