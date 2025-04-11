@@ -22,7 +22,9 @@ const RollingBlock = ({ data }) => {
           ))}
           {data.slice(0, 8).map((item, index) => (
             <div className="slide" key={`repeat-${index}`}>
-              <img src={item.imageUrl} alt={item.name || ''} />
+              <a href={item.url} target="_blank" rel="noopener noreferrer">
+                <img src={item.imageUrl} alt={item.name || ''} />
+              </a>
             </div>
           ))}
         </div>
