@@ -561,7 +561,7 @@ def rank_stations(stations_data, madeira_stations_dict):
         rankings.append(evaluation)
 
     # Sort by max_temp (descending)
-    rankings.sort(key=lambda x: x['max_temp'], reverse=True)
+    rankings.sort(key=lambda x: x.get('max_temp', 0), reverse=True)
 
     # Attribute points to the top N stations
     bonus_points = [7, 5, 3, 2, 1, 0, -1, -2, -3, -4, -5]
@@ -574,6 +574,23 @@ def rank_stations(stations_data, madeira_stations_dict):
     rankings.sort(key=lambda x: x['total_points'], reverse=True)
 
     return rankings
+
+def has_meaningful_data(rankings):
+    """
+    Checks if the rankings contain meaningful data.
+    """
+    if not rankings:
+        return False
+    
+    # Check if all stations have very low point values
+    all_low_points = all(r.get('total_points', 0) < 10 for r in rankings)
+    
+    # Check if all readings are from previous day and it's currently night
+    current_hour = datetime.datetime.now().hour
+    is_night_hours = 0 <= current_hour < 7  # Between midnight and 7 AM
+    
+    # No meaningful data if it's night hours and all stations have low points
+    return not (is_night_hours and all_low_points)
 
 # ========== DISPLAY FUNCTIONS ==========
 

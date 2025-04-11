@@ -15,7 +15,8 @@ from beach_ranker import (  # Explicit imports
     get_madeira_stations,
     organize_data_by_station,
     sort_data_by_time,
-    rank_stations
+    rank_stations,
+    has_meaningful_data
 )
 
 app = Flask(__name__)
@@ -126,7 +127,7 @@ def get_rankings():
 
         # 8. Return data
         return jsonify({
-            'status': 'empty' if not rankings else 'success',
+            'status': 'empty' if not has_meaningful_data(formatted_rankings) else 'success',
             'last_updated': datetime.now().isoformat(),
             'rankings': formatted_rankings,
             'uv': formatted_uv,
