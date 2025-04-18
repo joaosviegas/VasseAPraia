@@ -81,6 +81,8 @@ const App = () => {
     if (rankingsSection) {
       rankingsSection.scrollIntoView({ behavior: 'smooth' });
     }
+
+    
     
     // Buscar dados da API
     fetch('/api/rankings')
