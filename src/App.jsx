@@ -18,6 +18,7 @@ import logo5 from './assets/images/ipma-logo.png';
 import logo7 from './assets/images/madeira-island-logo.png';
 import logo6 from './assets/images/sao-vicente-municipio-logo.png';
 import logo8 from './assets/images/ilha-do-porto-santo-logo.png';
+import Carousel from './components/Carousel/Carousel';
 
 const App = () => {
   const [rankingsData, setRankingsData] = useState(null);
@@ -192,6 +193,7 @@ const App = () => {
           <RollingBlock data={carouselData} />
         </div>
         <InteractiveMap />
+        <Carousel />
       </section>
       <Footer />
     </div>

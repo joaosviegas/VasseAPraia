@@ -1,0 +1,140 @@
+
+.carousel-container {
+    margin-left: 40vw;
+    position: relative;
+    overflow: hidden;
+    padding: 24px;
+    border-radius: 28px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 90vw;
+    width: 300px; /* Increased width */
+  }
+  
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    .carousel-container {
+      border-color: rgba(255, 255, 255, 0.15);
+      background-color: #1a1a1a;
+    }
+  }
+  
+  /* Track that holds all items */
+  .carousel-track {
+    display: flex;
+    gap: 20px; /* Slightly increased gap */
+    perspective: 1200px; /* Increased for more dramatic effect */
+  }
+  
+  /* Individual carousel item */
+  .carousel-item {
+    width: 240px; /* Increased from 200px */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    overflow: hidden;
+    height: 220px; /* Increased from 180px */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .carousel-item:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Dark mode for items */
+  @media (prefers-color-scheme: dark) {
+    .carousel-item {
+      border-color: rgba(255, 255, 255, 0.15);
+      background-color: #2a2a2a;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .carousel-item:hover {
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  /* Icon container */
+  .carousel-icon {
+    font-size: 24px; /* Increased size */
+    width: 40px; /* Increased size */
+    height: 40px; /* Increased size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    margin: 24px 0 0 24px;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .carousel-icon {
+      background-color: #3a3a3a;
+    }
+  }
+  
+  /* Content area */
+  .carousel-title {
+    font-size: 18px; /* Increased from 14px */
+    font-weight: 600; /* Made slightly bolder */
+    margin: 0 24px;
+    color: #000;
+  }
+  
+  .carousel-description {
+    font-size: 16px; /* Increased from 14px */
+    margin: 6px 24px 24px 24px;
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .carousel-title {
+      color: #fff;
+    }
+    
+    .carousel-description {
+      color: #aaa;
+    }
+  }
+  
+  /* Navigation dots */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    width: 100%;
+  }
+  
+  .carousel-dot {
+    width: 10px; /* Increased size */
+    height: 10px; /* Increased size */
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.15s, transform 0.2s;
+  }
+  
+  .carousel-dot.active {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .carousel-dot:hover {
+    transform: scale(1.1);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .carousel-dot {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .carousel-dot.active {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
