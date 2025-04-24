@@ -45,7 +45,6 @@ const App = () => {
   const [selectedConcelho, setSelectedConcelho] = useState('Funchal');
 
   const handleConcelhoSelect = (concelhoName) => {
-    console.log('Selected Concelho:', concelhoName);
     setSelectedConcelho(concelhoName);
   };
 

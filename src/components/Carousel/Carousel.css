@@ -7,7 +7,7 @@
   overflow: hidden;
   padding: 24px;
   background-color: white;
-  max-width: 82vw;
+  width: 82vw;
   margin: 0 auto;
 }
 
@@ -56,13 +56,15 @@
 
 .beach-carousel-track-container {
   width: calc(100% - 120px);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
-  height: 380px;
+  height: auto;
+  min-height: 500px;
 }
 
 .beach-carousel-track {
   display: flex;
+  gap: 32px;
   transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
   width: 100%;
   height: 100%;
@@ -70,7 +72,7 @@
 
 .beach-carousel-item {
   min-width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 20px;
   overflow: hidden;
   background-color: #f9f9f9;
@@ -81,7 +83,7 @@
 }
 
 .beach-image {
-  height: 180px;
+  height: 300px;
   overflow: hidden;
   position: relative;
 }
@@ -123,6 +125,18 @@
   flex-shrink: 0;
 }
 
+.beach-details i {
+  color: #1a73e8;
+  padding: 4px; 
+  font-size: 16px;
+}
+
+.beach-details strong {
+  color: #1a73e8;
+  padding-right: 4px;
+  font-size: 16px;
+}
+
 .beach-title-container {
   flex: 1;
 }
@@ -161,6 +175,7 @@
 }
 
 .beach-description {
+  padding: 16px;
   font-size: 16px;
   line-height: 1.5;
   color: #333;

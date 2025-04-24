@@ -10,51 +10,151 @@ const BEACHES_BY_CONCELHO = {
       id: 'praia-formosa',
       title: 'Praia Formosa',
       type: 'Praia de Calhau',
-      price: 'free',
-      facilities: 'bar, wc, lifeguard',
-      description: 'The largest beach in Madeira, featuring black sand and pebbles with crystal clear waters.',
-      image: '/api/placeholder/600/300',
+      price: 'Grátis',
+      facilities: 'wc, lifeguard, food, parking',
+      description: 'A maior praia da Madeira, com calhau e areia preta, ideal para um mergulho rápido ou para um passeio na promenade que conecta o Funchal a Câmara de Lobos.',
+      image: '/src/assets/images/praia-formosa-1-digitaltravelcouple.jpg',
       icon: '🏖️',
     },
     {
       id: 'docas-cavacas',
       title: 'Docas do Cavacas',
       type: 'Piscinas naturais',
-      price: 'paid',
+      price: 'Pago',
       facilities: 'bar, wc, showers',
-      description: 'Beautiful natural pools formed by volcanic rocks with access to the sea.',
-      image: '/api/placeholder/600/300',
-      icon: '🌊',
+      description: 'Belas piscinas naturais formadas por rochas vulcânicas com acesso direto ao mar.',
+      image: '/src/assets/images/madeira_mar_019-andre-carvalho.jpg',
+      icon: '🏖️',
     },
     {
       id: 'praia-paneleiros',
-      title: 'Praia dos Paneleiros',
+      title: 'Poça do Governador',
       type: 'Praia escondida',
-      price: 'free',
-      facilities: 'none',
-      description: 'Praia escondida, de difícil acesso, mas com piscina natural e acesso ao mar.',
-      image: '/api/placeholder/600/300',
+      price: 'Grátis',
+      facilities: 'nenhuma',
+      description: 'Também conhecida como Praia dos Paneleiros, é uma enseada secreta e de difícil acesso, mas com piscina natural e águas límpidas.',
+      image: 'src/assets/images/FUN2746.jpg',
       icon: '🏝️',
     },
     {
       id: 'ponta-gorda',
       title: 'Ponta Gorda',
       type: 'Complexo balnear',
-      price: 'paid',
+      price: 'Grátis',
       facilities: 'bar, restaurant, wc, lifeguard',
-      description: 'Modern bathing complex with access to the sea via ladders.',
+      description: 'Complexo moderno com escadas de acesso ao mar, ideal para banho e lazer.',
       image: '/api/placeholder/600/300',
-      icon: '🏊',
+      icon: '🏖️',
     },
     {
       id: 'clube-naval',
       title: 'Clube Naval do Funchal',
       type: 'Piscinas',
-      price: 'paid',
-      facilities: 'bar, restaurant, wc, pool',
-      description: 'Swimming pools with sea access and various water activities.',
+      price: 'Pago',
+      facilities: 'bar, restaurant, pool, wc',
+      description: 'Piscinas com acesso ao mar e diversas atividades aquáticas para sócios e visitantes.',
       image: '/api/placeholder/600/300',
-      icon: '🚣',
+      icon: '🏖️',
+    },
+    {
+      id: 'praia-das-gavinas',
+      title: 'Praia das Gavinas',
+      type: 'Praia de Calhau',
+      price: 'Grátis',
+      facilities: 'wc, estacionamento',
+      description: 'Pequena praia de calhau, pouco movimentada e ideal para relaxar ao som das ondas.',
+      image: '/api/placeholder/600/300',
+      icon: '🏖️',
+    },
+    {
+      id: 'lido-velho',
+      title: 'Lido Velho',
+      type: 'Piscinas naturais',
+      price: 'Grátis',
+      facilities: 'bar, wc, piscina',
+      description: 'Antigo complexo de piscinas naturais com vista para o oceano e serviços de bar.',
+      image: '/api/placeholder/600/300',
+      icon: '🏖️',
+    },
+    {
+      id: 'lido',
+      title: 'Lido',
+      type: 'Complexo balnear',
+      price: 'Pago',
+      facilities: 'bar, restaurant, pool, wc, lifeguard',
+      description: 'Moderno complexo de lazer com piscinas, acesso ao mar e infraestruturas para toda a família.',
+      image: '/api/placeholder/600/300',
+      icon: '🏖️',
+    },
+    {
+      id: 'clube-de-turismo',
+      title: 'Clube de Turismo',
+      type: 'Piscinas',
+      price: 'Pago',
+      facilities: 'bar, restaurant, pool, wc',
+      description: 'Piscinas em ambiente privado, com serviços de bar e restauração para sócios.',
+      image: '/api/placeholder/600/300',
+      icon: '🏖️',
+    },
+    {
+      id: 'praia-secreta',
+      title: 'Praia Secreta',
+      type: 'Praia escondida',
+      price: 'Grátis',
+      facilities: 'nenhuma',
+      description: 'Enseada isolada e de difícil acesso, perfeita para quem procura tranquilidade total.',
+      image: '/api/placeholder/600/300',
+      icon: '🏝️',
+    },
+    {
+      id: 'praia-nova',
+      title: 'Praia Nova',
+      type: 'Praia de Calhau',
+      price: 'Grátis',
+      facilities: 'wc, estacionamento',
+      description: 'Localizada no centro do Funchal, esta praia de calhau está perto de cafés e esplanadas.',
+      image: '/api/placeholder/600/300',
+      icon: '🏖️',
+    },
+    {
+      id: 'praia-sao-tiago',
+      title: 'Praia de S. Tiago (Arsenal)',
+      type: 'Complexo balnear',
+      price: 'Grátis',
+      facilities: 'restaurant, wc, estacionamento, lifeguard',
+      description: 'Também chamada Arsenal, combina restaurante de peixe fresco com acesso direto ao mar.',
+      image: '/api/placeholder/600/300',
+      icon: '🏖️',
+    },
+    {
+      id: 'barreirinha',
+      title: 'Barreirinha',
+      type: 'Praia de Calhau',
+      price: 'Grátis',
+      facilities: 'wc, bar',
+      description: 'Pequena praia urbana, muito familiar, com correntes suaves e serviços de bar.',
+      image: '/api/placeholder/600/300',
+      icon: '🏖️',
+    },
+    {
+      id: 'praia-do-touco',
+      title: 'Praia do Touco',
+      type: 'Praia escondida',
+      price: 'Grátis',
+      facilities: 'nenhuma',
+      description: 'Praia secreta com acesso por trilho e águas cristalinas, ideal para aventureiros.',
+      image: '/api/placeholder/600/300',
+      icon: '🏝️',
+    },
+    {
+      id: 'lazareto',
+      title: 'Lazareto',
+      type: 'Praia escondida',
+      price: 'Grátis',
+      facilities: 'nenhuma',
+      description: 'Enseada preservada com acesso complicado, frequente por quem busca sossego.',
+      image: '/api/placeholder/600/300',
+      icon: '🏝️',
     },
   ],
   'Machico': [
@@ -185,12 +285,27 @@ const BEACHES_BY_CONCELHO = {
   ],
 };
 
+const getFacilityIcons = (facilities) => {
+  const facilityIcons = {
+    wc: 'fa-solid fa-restroom', // Restroom icon
+    lifeguard: 'fa-solid fa-life-ring', // Lifeguard icon
+    parking: 'fa-solid fa-square-parking', // Parking icon
+    food: 'fa-solid fa-utensils', // Food icon
+    shower: 'fa-solid fa-shower', // Shower icon
+  };
+
+  return facilities
+    .split(',') // Split the string by commas
+    .map((facility) => facility.trim()) // Trim whitespace
+    .map((facility) => facilityIcons[facility] || '') // Map to FontAwesome classes, fallback to empty string
+    .filter((icon) => icon !== ''); // Remove empty strings
+};
+
 const Carousel = ({ selectedConcelho = 'Funchal' }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [beaches, setBeaches] = useState([]);
 
   useEffect(() => {
-    console.log('Selected Concelho in Carousel:', selectedConcelho);
     const selectedBeaches = BEACHES_BY_CONCELHO[selectedConcelho] || [];
     setBeaches(selectedBeaches);
     setCurrentIndex(0);
@@ -250,16 +365,16 @@ const Carousel = ({ selectedConcelho = 'Funchal' }) => {
                   <div className="beach-details">
                     {beach.price && (
                       <div className="beach-detail">
-                        <span className="detail-icon">💰</span>
+                        <i className="fa-solid fa-euro-sign" ></i>
                         <span className="detail-text">{beach.price}</span>
                       </div>
                     )}
-                    {beach.facilities && (
-                      <div className="beach-detail">
-                        <span className="detail-icon">🏢</span>
-                        <span className="detail-text">{beach.facilities}</span>
-                      </div>
-                    )}
+                    <div className="beach-detail">
+                      {/* Dynamically render FontAwesome icons based on facilities */}
+                      {getFacilityIcons(beach.facilities).map((iconClass, idx) => (
+                        <i key={idx} className={`detail-icon ${iconClass}`}></i>
+                      ))}
+                    </div>
                   </div>
                   
                   <div className="beach-description">{beach.description}</div>
