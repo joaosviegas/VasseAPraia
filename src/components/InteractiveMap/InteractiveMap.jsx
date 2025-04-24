@@ -3,7 +3,7 @@ import './InteractiveMap.css';
 import MadeiraSvg from './Madeira.svg';
 import MadeiraConcelhosSvg from './Madeira-Concelhos.svg';
 
-const InteractiveMap = () => {
+const InteractiveMap = ({onConcelhoSelect}) => {
   const [activeRegion, setActiveRegion] = useState(null);
   
   const regions = [
@@ -108,6 +108,13 @@ const InteractiveMap = () => {
 
     }
 ];
+
+const handleRegionClick = (region) => {
+  console.log('Region clicked:', region.name);
+  if (onConcelhoSelect) {
+    onConcelhoSelect(region.name);
+  }
+}
  
 return (
   <div className="map-section">
@@ -137,6 +144,7 @@ return (
                   });
                 }}
                 onMouseLeave={() => setActiveRegion(null)}
+                onClick={() => handleRegionClick(region)}
               />
 
               {/* Render tooltip and connecting lines when region is active */}

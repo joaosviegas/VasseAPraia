@@ -42,6 +42,13 @@ const App = () => {
     { imageUrl: logo8, altText: 'Ilha do Porto Santo', url: 'https://portosantobiosfera.madeira.gov.pt/pt/'}
   ]);
 
+  const [selectedConcelho, setSelectedConcelho] = useState('Funchal');
+
+  const handleConcelhoSelect = (concelhoName) => {
+    console.log('Selected Concelho:', concelhoName);
+    setSelectedConcelho(concelhoName);
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -192,8 +199,8 @@ const App = () => {
         <div className="container">
           <RollingBlock data={carouselData} />
         </div>
-        <InteractiveMap />
-        <Carousel />
+        <InteractiveMap onConcelhoSelect={handleConcelhoSelect} />
+        <Carousel selectedConcelho={selectedConcelho} />
       </section>
       <Footer />
     </div>

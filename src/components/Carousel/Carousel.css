@@ -1,140 +1,263 @@
+.carousel-section {
+  background-color: white;
+}
 
-.carousel-container {
-    margin-left: 40vw;
-    position: relative;
-    overflow: hidden;
-    padding: 24px;
-    border-radius: 28px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    max-width: 90vw;
-    width: 300px; /* Increased width */
+.beach-carousel-container {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  background-color: white;
+  max-width: 82vw;
+  margin: 0 auto;
+}
+
+.carousel-concelho-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #1976d2;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.carousel-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.carousel-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-arrow:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-arrow.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: scale(1);
+  box-shadow: none;
+}
+
+.beach-carousel-track-container {
+  width: calc(100% - 120px);
+  overflow: hidden;
+  position: relative;
+  height: 380px;
+}
+
+.beach-carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+  width: 100%;
+  height: 100%;
+}
+
+.beach-carousel-item {
+  min-width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.beach-image {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.beach-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.beach-carousel-item:hover .beach-image img {
+  transform: scale(1.05);
+}
+
+.beach-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.beach-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.beach-icon {
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.beach-title-container {
+  flex: 1;
+}
+
+.beach-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1976d2;
+  margin: 0;
+}
+
+.beach-type {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.beach-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.beach-detail {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.detail-icon {
+  margin-right: 6px;
+}
+
+.beach-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  flex: 1;
+}
+
+/* Navigation dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-dot.active {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.no-beaches {
+  padding: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Dark mode styling (commented as in your original code) */
+/*
+@media (prefers-color-scheme: dark) {
+  .beach-carousel-container {
+    background-color: #1a1a1a;
   }
   
-  /* Dark mode */
-  @media (prefers-color-scheme: dark) {
-    .carousel-container {
-      border-color: rgba(255, 255, 255, 0.15);
-      background-color: #1a1a1a;
-    }
+  .carousel-concelho-title {
+    color: #64b5f6;
   }
   
-  /* Track that holds all items */
-  .carousel-track {
-    display: flex;
-    gap: 20px; /* Slightly increased gap */
-    perspective: 1200px; /* Increased for more dramatic effect */
+  .carousel-arrow {
+    background-color: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.1);
   }
   
-  /* Individual carousel item */
-  .carousel-item {
-    width: 240px; /* Increased from 200px */
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-    overflow: hidden;
-    height: 220px; /* Increased from 180px */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
+  .carousel-arrow:hover {
+    background-color: #333;
   }
   
-  .carousel-item:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  .beach-carousel-item {
+    background-color: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
   
-  /* Dark mode for items */
-  @media (prefers-color-scheme: dark) {
-    .carousel-item {
-      border-color: rgba(255, 255, 255, 0.15);
-      background-color: #2a2a2a;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    
-    .carousel-item:hover {
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    }
+  .beach-icon {
+    background-color: #333;
   }
   
-  /* Icon container */
-  .carousel-icon {
-    font-size: 24px; /* Increased size */
-    width: 40px; /* Increased size */
-    height: 40px; /* Increased size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    margin: 24px 0 0 24px;
+  .beach-title {
+    color: #64b5f6;
   }
   
-  @media (prefers-color-scheme: dark) {
-    .carousel-icon {
-      background-color: #3a3a3a;
-    }
+  .beach-type {
+    color: #aaa;
   }
   
-  /* Content area */
-  .carousel-title {
-    font-size: 18px; /* Increased from 14px */
-    font-weight: 600; /* Made slightly bolder */
-    margin: 0 24px;
-    color: #000;
+  .beach-detail {
+    background-color: #333;
+    color: #ddd;
   }
   
-  .carousel-description {
-    font-size: 16px; /* Increased from 14px */
-    margin: 6px 24px 24px 24px;
-    color: #555;
-    line-height: 1.4;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .carousel-title {
-      color: #fff;
-    }
-    
-    .carousel-description {
-      color: #aaa;
-    }
-  }
-  
-  /* Navigation dots */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 24px;
-    width: 100%;
+  .beach-description {
+    color: #bbb;
   }
   
   .carousel-dot {
-    width: 10px; /* Increased size */
-    height: 10px; /* Increased size */
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.2);
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.15s, transform 0.2s;
+    background-color: rgba(255, 255, 255, 0.2);
   }
   
   .carousel-dot.active {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
   }
   
-  .carousel-dot:hover {
-    transform: scale(1.1);
+  .no-beaches {
+    color: #aaa;
   }
-  
-  @media (prefers-color-scheme: dark) {
-    .carousel-dot {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-    
-    .carousel-dot.active {
-      background-color: rgba(255, 255, 255, 0.6);
-    }
-  }
+}
+*/
