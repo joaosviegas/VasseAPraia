@@ -7,8 +7,28 @@
   overflow: hidden;
   padding: 24px;
   background-color: white;
-  width: 82vw;
   margin: 0 auto;
+}
+
+.beach-carousel-container::before,
+.beach-carousel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 75px; /* Adjust the width of the fade */
+  z-index: 5;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.beach-carousel-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.beach-carousel-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 }
 
 .carousel-concelho-title {
@@ -27,18 +47,27 @@
 }
 
 .carousel-arrow {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-arrow.prev {
+  left: calc((100% - 90vw) / 2);
+}
+
+.carousel-arrow.next {
+  right: calc((100% - 90vw) / 2);
 }
 
 .carousel-arrow:hover {
@@ -55,7 +84,8 @@
 }
 
 .beach-carousel-track-container {
-  width: calc(100% - 120px);
+  width: 90vw;
+  margin: 0 auto;
   overflow: visible;
   position: relative;
   height: auto;
@@ -64,14 +94,16 @@
 
 .beach-carousel-track {
   display: flex;
+  margin-left: 300px;
   gap: 32px;
   transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
-  width: 100%;
+  width: auto;
   height: 100%;
+  margin-left: 400px; /* Center the first slide */
 }
 
 .beach-carousel-item {
-  min-width: 100%;
+  min-width: 60%;
   height: auto;
   border-radius: 20px;
   overflow: hidden;
