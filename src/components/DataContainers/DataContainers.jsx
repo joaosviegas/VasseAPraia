@@ -46,9 +46,9 @@ const DataContainers = ({ warnings = [], seaData = [], uvData = [] }) => {
     } else if (uvIndex < 8) {
       return 'UV Alto';
     } else if (uvIndex < 11) {
-      return 'UV Muito ALto - Evitar exposição ao sol';
+      return 'UV Muito ALto - Evitar exposição solar';
     } else {
-      return 'UV Extremo - Evitar exposição ao sol';
+      return 'UV Extremo - Evitar exposição solar!';
     }
   }
 
