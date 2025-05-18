@@ -118,7 +118,7 @@ const handleRegionClick = (region) => {
 }
  
 return (
-  <div className="map-section">
+  <div className="map-section" id="interactive-map">
     <h2>Mapa de Praias da Madeira</h2>
     
     <div className="map-container">

@@ -5,7 +5,7 @@ import FeatureCard from './FeatureCard';
 
 const Features = () => {
   return (
-    <section className="features-section">
+    <section className="features-section" id ="features">
       {/* Background Grid */}
       <div className="grid"></div>
       
