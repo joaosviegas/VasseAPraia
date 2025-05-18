@@ -15,7 +15,7 @@
 .slider {
   background: white;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-  height: 200px;
+  height: 110px;
   margin: auto;
   overflow: hidden;
   position: relative;
@@ -23,7 +23,7 @@
 }
 
 .rolling-block-title h3{
-  font-size: 3rem !important;
+  font-size: 2rem !important;
   padding-top: 10px;
   background: linear-gradient(to right, #2196f3, #1976d2);
   -webkit-background-clip: text;
@@ -37,7 +37,7 @@
   content: "";
   height: 200px;
   position: absolute;
-  width: 200px;
+  width: 300px;
   z-index: 2;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .slider .slide {
-  height: 200px;
+  height: 100px;
   width: 350px;
   display: flex;
   justify-content: center;
@@ -75,6 +75,6 @@
 
 .slider .slide img {
   object-fit: cover;
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 75%;
+  max-width: 75%;
 }
