@@ -1,78 +1,35 @@
-# Vasse à Praia? 🌊☀️  
+<h1 align="center">🏖️ Vasse à Praia? 🏖️</h1>
 
-**Your All-in-One Madeira Beach Weather Companion**  
+<p align="center">
+  <a href="https://github.com/yourusername/VasseAPraia/issues">
+    <img src="https://img.shields.io/github/issues/yourusername/VasseAPraia" alt="Issues" />
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/license-MIT-brightgreen" alt="MIT License" />
+  </a>
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
-[![Portuguese Madeira](https://img.shields.io/badge/%F0%9F%87%B5%F0%9F%87%B9-Portugal%20Madeira-1a73e8)](https://visitmadeira.com)  
+## Project Overview
 
+<p align="center">
+  VasseAPraia is an open-source, decision assistant web-app designed to help users choose the best beach destinations on Madeira Island. The application provides recommendations based on various real-time factors, and allows for a All-in-one hub to checkout how's the weather like in the best beach spot of the Island.
+</p>
 
-Born from countless trips to Madeira's hidden beaches, **Vasse à Praia?** solves a local problem: finding real-time weather conditions across the island's diverse microclimates.  
+## Technologies Used
 
-Unlike generic weather apps, we focus specifically on relevant beach metrics for Madeira's unique coastal environment.
+- **Programming Language**: Python
+- **Web Framework**: Flask
+- **Frontend**: HTML, CSS, JavaScript
+- **APIs**: IPMA API (https://api.ipma.pt/)
+- **Deployment**: Cloudflare
 
-## Key Features 🌟  
-- **Real-Time Beach Rankings** - Compare conditions across 11 municipalities  
-- **UV Radiation Tracker** - With peak hour forecasts for sun safety  
-- **Coastal Warnings** - Instant alerts for strong winds/swell   
+## Features
 
-## Tech Stack 💻  
-**Frontend**  
-[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)  
-[![Vite](https://img.shields.io/badge/Vite-4-646CFF?logo=vite)](https://vitejs.dev/)  
+- **Beach Recommendations**: Get personalized beach suggestions based on current weather conditions and user preferences.
+- **Weather Updates**: Access real-time weather information for each beach location.
 
-**Backend**  
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python)](https://www.python.org/)  
-[![Flask](https://img.shields.io/badge/Flask-2.3-000000?logo=flask)](https://flask.palletsprojects.com/)  
+## License
 
-**Data Sources**  
-[![IPMA](https://img.shields.io/badge/Weather%20Data-IPMA%20API-1a73e8)](https://www.ipma.pt)  
+- This project is licensed under the MIT License.
+- The use of the IPMA API is subject to its own terms of service. Please refer to the [IPMA API documentation](https://api.ipma.pt/) for more information on usage rights and restrictions.
 
-## Project Structure 🗂️  
-
-```
-react-weather-app
-├── backend
-│   ├── app.py
-│   ├── beach_ranker.py
-│   └── requirements.txt
-├── src
-│   ├── components
-|   |   ├── commomn
-|   |   │   ├── Tooltip.jsx
-|   |   │   └── Tooltip.css
-│   │   ├── Header
-│   │   │   ├── Header.jsx
-│   │   │   └── Header.css
-│   │   ├── Hero
-│   │   │   ├── Hero.jsx
-│   │   │   └── Hero.css
-│   │   ├── Features
-│   │   │   ├── Features.jsx
-│   │   │   ├── FeatureCard.jsx
-│   │   │   └── Features.css
-│   │   ├── DataContainers
-│   │   │   ├── DataContainers.jsx
-│   │   │   ├── WarningsCard.jsx
-│   │   │   ├── SeaCard.jsx
-│   │   │   ├── UVCard.jsx
-│   │   │   └── DataContainers.css
-│   │   ├── Rankings
-│   │   │   ├── Rankings.jsx
-│   │   │   ├── StationRanking.jsx
-│   │   │   ├── Legend.jsx
-│   │   │   └── Rankings.css
-│   │   └── Footer
-│   │       ├── Footer.jsx
-│   │       └── Footer.css
-│   ├── App.jsx
-│   ├── App.css
-│   ├── index.css
-│   └── main.jsx
-├── public
-│   ├── favicon.svg
-│   └── logo.svg
-├── index.html
-├── package.json
-├── vite.config.js
-└── README.md
-```
