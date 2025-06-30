@@ -1,14 +1,5 @@
 <h1 align="center">🏖️ Vasse à Praia? 🏖️</h1>
 
-<p align="center">
-  <a href="https://github.com/yourusername/VasseAPraia/issues">
-    <img src="https://img.shields.io/github/issues/yourusername/VasseAPraia" alt="Issues" />
-  </a>
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/badge/license-MIT-brightgreen" alt="MIT License" />
-  </a>
-</p>
-
 ## Project Overview
 
 <p align="center">
