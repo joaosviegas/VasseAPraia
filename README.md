@@ -11,7 +11,7 @@
 - **Programming Language**: Python
 - **Web Framework**: Flask
 - **Frontend**: HTML, CSS, JavaScript
-- **APIs**: IPMA API (https://api.ipma.pt/)
+- **APIs**: [IPMA API](https://api.ipma.pt/)
 - **Deployment**: Cloudflare
 
 ## Features
