@@ -89,10 +89,10 @@ const App = () => {
       rankingsSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    
+    const apiBaseUrl = import.meta.env.VITE_REACT_APP_API_URL;
     
     // Buscar dados da API
-    fetch('/api/rankings')
+    fetch(`${apiBaseUrl}/api/rankings`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
