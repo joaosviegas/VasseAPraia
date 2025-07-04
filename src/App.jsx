@@ -48,6 +48,14 @@ const App = () => {
     setSelectedConcelho(concelhoName);
   };
 
+  const handleStationClick = (station) => {
+    setSelectedConcelho(station.city);
+    const mapSection = document.getElementById('interactive-map');
+    if (mapSection) {
+      mapSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -179,7 +187,8 @@ const App = () => {
                 ) : (
                   <Rankings 
                     rankingsData={rankingsData} 
-                    lastUpdated={lastUpdated} 
+                    lastUpdated={lastUpdated}
+                    onStationClick={handleStationClick}
                   />
                 )}
               </div>
@@ -198,7 +207,7 @@ const App = () => {
         <div className="container">
           <RollingBlock data={carouselData} />
         </div>
-        <InteractiveMap onConcelhoSelect={handleConcelhoSelect} />
+        <InteractiveMap onConcelhoSelect={handleConcelhoSelect} selectedConcelho={selectedConcelho} />
         <Carousel selectedConcelho={selectedConcelho} />
       </section>
       <Footer />

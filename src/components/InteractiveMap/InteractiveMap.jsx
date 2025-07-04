@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './InteractiveMap.css';
 import MadeiraSvg from './Madeira.svg';
 import MadeiraConcelhosSvg from './Madeira-Concelhos.svg';
 
-const InteractiveMap = ({onConcelhoSelect}) => {
+const InteractiveMap = ({onConcelhoSelect, selectedConcelho}) => {
   const [activeRegion, setActiveRegion] = useState(null);
   const [clickedRegion, setClickedRegion] = useState(null);
   
+  useEffect(() => {
+    if (selectedConcelho) {
+      const region = regions.find(r => r.name === selectedConcelho);
+      if (region) {
+        setClickedRegion(region);
+        setActiveRegion(region);
+      }
+    }
+  }, [selectedConcelho]);
+
   const regions = [
     {
         id: "funchal",

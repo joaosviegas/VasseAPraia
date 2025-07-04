@@ -44,6 +44,7 @@
 
 .station-ranking.visible {
   opacity: 1;
+  cursor: pointer;
   transform: translateY(0);
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
 }

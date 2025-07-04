@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Tooltip from '../common/Tooltip';
 import './Rankings.css';
 
-const Rankings = ({ rankingsData = [], lastUpdated }) => {
+const Rankings = ({ rankingsData = [], lastUpdated, onStationClick }) => {
   useEffect(() => {
     // Adicionar animação após o componente montar
     const timeout = setTimeout(() => {
@@ -45,6 +45,12 @@ const Rankings = ({ rankingsData = [], lastUpdated }) => {
   });
 };
 
+const handleStationClick = (station) => {
+  if (onStationClick) {
+    onStationClick(station);
+  }
+};
+
   return (
     <section className="rankings">
       
@@ -54,7 +60,7 @@ const Rankings = ({ rankingsData = [], lastUpdated }) => {
           const warnings = getWarningIcons(station.warnings);
           
           return (
-            <div className="station-ranking" key={index} style={{transitionDelay: `${index * 50}ms`}}>
+            <div className="station-ranking" key={index} style={{transitionDelay: `${index * 50}ms`}} onClick={() => handleStationClick(station)}>
               <div className="station-header">
                 <span className="station-rank">{index + 1}</span>
                 <h3>{station.name}</h3>
