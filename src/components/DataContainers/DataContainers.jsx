@@ -90,7 +90,7 @@ const DataContainers = ({ warnings = [], seaData = [], uvData = [] }) => {
       {/* Sea Conditions */}
       <div className="data-card sea-card">
         <h3><i className="fas fa-water"></i> Condições do Mar</h3>
-        {seaData.map((sea, index) => (
+        {seaData.sort((a,b) => a.location === "Madeira" ? -1 : 1).map((sea, index) => (
           <div className="sea-item" key={index}>
             <span className="sea-location">{sea.location}:</span>
             <div className="sea-details">
