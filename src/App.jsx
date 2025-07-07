@@ -10,14 +10,14 @@ import InteractiveMap from './components/InteractiveMap/InteractiveMap';
 import './App.css';
 import { formatDateTime } from './utils/dateUtils';
 
-import logo1 from './assets/images/calheta-municipio-logo.png';
-import logo2 from './assets/images/camara-de-lobos-municipio-logo.png';
-import logo3 from './assets/images/frente-mar-funchal-logo.png';
-import logo4 from './assets/images/funchal-municipio-logo.png';
-import logo5 from './assets/images/ipma-logo.png';
-import logo7 from './assets/images/madeira-island-logo.png';
-import logo6 from './assets/images/sao-vicente-municipio-logo.png';
-import logo8 from './assets/images/ilha-do-porto-santo-logo.png';
+import logo1 from '/images/calheta-municipio-logo.png';
+import logo2 from '/images/camara-de-lobos-municipio-logo.png';
+import logo3 from '/images/frente-mar-funchal-logo.png';
+import logo4 from '/images/funchal-municipio-logo.png';
+import logo5 from '/images/ipma-logo.png';
+import logo7 from '/images/madeira-island-logo.png';
+import logo6 from '/images/sao-vicente-municipio-logo.png';
+import logo8 from '/images/ilha-do-porto-santo-logo.png';
 import Carousel from './components/Carousel/Carousel';
 
 const App = () => {
