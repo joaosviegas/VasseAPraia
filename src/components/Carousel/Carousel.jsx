@@ -1,4 +1,4 @@
-// BeachCarousel.jsx
+// Carousel.jsx
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './Carousel.css';
@@ -13,7 +13,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, lifeguard, food, bar, parking',
       description: 'A maior praia da Madeira, com calhau e areia preta, ideal para um mergulho rápido ou para um passeio na promenade que conecta o Funchal a Câmara de Lobos.',
-      image: '/src/assets/images/praia-formosa-1-digitaltravelcouple.jpg',
+      image: '/images/praia-formosa-1-digitaltravelcouple.jpg',
       icon: '🏖️',
     },
     {
@@ -23,7 +23,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Pago',
       facilities: 'wc, shower, lifeguard, food, bar',
       description: 'Belas piscinas naturais formadas por rochas vulcânicas com acesso direto ao mar.',
-      image: '/src/assets/images/madeira_mar_019-andre-carvalho.jpg',
+      image: '/images/madeira_mar_019-andre-carvalho.jpg',
       icon: '🏖️',
     },
     {
@@ -155,7 +155,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Grátis',
     facilities: 'wc, parking, sport',
     description: 'Pequeno acesso ao mar escondido na freguesia de Água de Pena, ideal para momentos de tranquilidade junto ao oceano.',
-    image: '/src/assets/images/parque-desportivo-de-água-de-pena-2.jpg',
+    image: '/images/parque-desportivo-de-água-de-pena-2.jpg',
     icon: '🌊',
   },
   {
@@ -165,7 +165,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Grátis',
     facilities: 'shower, lifeguard',
     description: 'Praia de Calhau na baia de Machico, possui cais para aceder ao mar e ondas para fazer surf.',
-    image: '/src/assets/images/praia-de-são-roque-2.jpg',
+    image: '/images/praia-de-são-roque-2.jpg',
     icon: '🏖️',
   },
   {
@@ -175,7 +175,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Grátis',
     facilities: 'wc, shower, food, bar, lifeguard, parking, sport',
     description: 'Praia de areia dourada localizada na baía de Machico, com diversas infraestruturas de apoio.',
-    image: '/src/assets/images/06052022_135754_dsc01914.jpg',
+    image: '/images/06052022_135754_dsc01914.jpg',
     icon: '🏖️',
   },
   {
@@ -185,7 +185,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Grátis',
     facilities: 'wc, shower, food, bar, parking',
     description: 'Praia de calhau acompanhada pela promenade do Caniçal, com várias infraestruturas de apoio e uma beleza natural inegável.',
-    image: '/src/assets/images/01082022_170856_dsc03180.jpg',
+    image: '/images/01082022_170856_dsc03180.jpg',
     icon: '🏖️',
   },
   {
@@ -195,7 +195,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Grátis',
     facilities: 'wc, shower, bar, lifeguard',
     description: 'Pequena praia de calhau localizada no Caniçal, ideal para quem procura tranquilidade e contacto com a natureza.',
-    image: '/src/assets/images/IMG_8831 copiar.jpg',
+    image: '/images/IMG_8831 copiar.jpg',
     icon: '🌊',
   },
   {
@@ -205,7 +205,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Pago',
     facilities: 'wc, shower, food, bar, lifeguard, parking',
     description: 'Complexo com duas piscinas de água salgada, diversas infraestruturas de apoio e acesso ao mar.',
-    image: '/src/assets/images/07072022_130814_dji_0202.jpg',
+    image: '/images/07072022_130814_dji_0202.jpg',
     icon: '🏊',
   },
   {
@@ -215,7 +215,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Pago',
     facilities: 'wc, shower, food, bar, lifeguard, parking',
     description: 'Praia privada pertencente ao resort Quinta do Lorde, oferecendo acesso exclusivo a hóspedes e visitantes da marina.',
-    image: '/src/assets/images/8e89812e4f3ace1fd79a25f1b44eb239.jpg',
+    image: '/images/8e89812e4f3ace1fd79a25f1b44eb239.jpg',
     icon: '🏖️',
   },
   {
@@ -225,7 +225,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Grátis',
     facilities: 'wc, shower, food, bar, lifeguard, parking',
     description: 'Praia de areia natural acobreada, escondida entre as dunas da Piedade, próxima da Ponta de São Lourenço.',
-    image: '/src/assets/images/prainha-caniçal-7.jpg',
+    image: '/images/prainha-caniçal-7.jpg',
     icon: '🏖️',
   },
   {
@@ -235,7 +235,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Grátis',
     facilities: 'none',
     description: 'Pequena praia isolada situada no final da Vereda da Ponta de São Lourenço, ideal para um mergulho após uma caminhada.',
-    image: '/src/assets/images/cais-do-sardinha-2.jpg',
+    image: '/images/cais-do-sardinha-2.jpg',
     icon: '🚶‍♂️',
   },
   {
@@ -245,7 +245,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Grátis',
     facilities: 'shower',
     description: 'Praia conhecida pela excelência das suas ondas, sendo um dos locais preferidos dos surfistas na costa nordeste da Madeira.',
-    image: '/src/assets/images/praia-da-maiata-4.jpg',
+    image: '/images/praia-da-maiata-4.jpg',
     icon: '🏄',
   },
   {
@@ -265,7 +265,7 @@ const BEACHES_BY_CONCELHO = {
     price: 'Grátis',
     facilities: 'wc, food, bar, lifeguard',
     description: 'Praia de areia preta localizada na freguesia de Porto da Cruz, destacando-se pela montanha que se ergue sobre o mar.',
-    image: '/src/assets/images/praia-da-alagoa-5.jpg',
+    image: '/images/praia-da-alagoa-5.jpg',
     icon: '🏖️',
   },
 ],
@@ -465,7 +465,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, food, bar, lifeguard, parking, sport',
       description: 'Praia artificial de areia dourada, protegida, ideal para famílias e banhistas.',
-      image: '/src/assets/images/calheta_praia1-francisco-correia.jpg',
+      image: '/images/calheta_praia1-francisco-correia.jpg',
       icon: '🏖️',
     },
     {
@@ -485,7 +485,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'shower, food, bar',
       description: 'Pequena praia de calhau junto ao cais de Paul do Mar, popular entre locais e visitantes.',
-      image: '/src/assets/images/p5.jpg',
+      image: '/images/p5.jpg',
       icon: '🏖️',
     },
     {
@@ -495,7 +495,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'none',
       description: 'Pequena praia isolada no final da promenade do Jardim do Mar, acessível apenas a pé, ideal para quem procura tranquilidade.',
-      image: '/src/assets/images/jardim_do_mar_fc_turismo_da_madeira-1.jpg',
+      image: '/images/jardim_do_mar_fc_turismo_da_madeira-1.jpg',
       icon: '🏝️',
     },
     {
@@ -505,7 +505,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, food, bar',
       description: 'Pequena praia de calhau, localizada na extremidade leste do Jardim do Mar.',
-      image: '/src/assets/images/calhera_jardimdomar7.jpg',
+      image: '/images/calhera_jardimdomar7.jpg',
       icon: '🏖️',
     },
   ],
@@ -517,7 +517,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Pago',
       facilities: 'wc, shower, food, bar, lifeguard',
       description: 'Famosas piscinas naturais vulcânicas com vistas deslumbrantes do Atlântico.',
-      image: '/src/assets/images/piscinas-naturais-porto-moniz-17.jpg',
+      image: '/images/piscinas-naturais-porto-moniz-17.jpg',
       icon: '🌋',
     },
     {
@@ -527,7 +527,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'none',
       description: 'Piscinas naturais mais rústicas, sem infraestruturas, ideais para quem procura um mergulho rápido com uma experiência mais natural.',
-      image: '/src/assets/images/porto-moniz-madeira-piscinas-naturais-velhas-visitantes.jpg',
+      image: '/images/porto-moniz-madeira-piscinas-naturais-velhas-visitantes.jpg',
       icon: '🌋',
     },
     {
@@ -537,7 +537,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'none',
       description: 'Praia de calhau situada na foz da Ribeira da Janela, com paisagens impressionantes e boas condições para surf.',
-      image: '/src/assets/images/ribeira-da-janela-rocks-clear-water.jpg',
+      image: '/images/ribeira-da-janela-rocks-clear-water.jpg',
       icon: '🏖️',
     },
     {
@@ -547,7 +547,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'shower, parking',
       description: 'Piscinas naturais formadas por rochas vulcânicas, oferecendo um ambiente tranquilo e paisagens únicas.',
-      image: '/src/assets/images/naturalpoolseixal-qc263qfr4k2gae1i7rju6uq6ubdgf136q6r0rtrtec.jpg',
+      image: '/images/naturalpoolseixal-qc263qfr4k2gae1i7rju6uq6ubdgf136q6r0rtrtec.jpg',
       icon: '🌋',
     },
     {
@@ -557,7 +557,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, food, bar',
       description: 'Praia de areia preta com águas cristalinas, rodeada por montanhas verdes, ideal para relaxar e praticar surf.',
-      image: '/src/assets/images/piscinas-do-clube-naval-do-seixal.jpg',
+      image: '/images/piscinas-do-clube-naval-do-seixal.jpg',
       icon: '🏖️',
     },
     {
@@ -567,7 +567,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, food, bar, lifeguard',
       description: 'Praia de areia preta com águas cristalinas, rodeada por montanhas verdes, ideal para relaxar e praticar surf.',
-      image: '/src/assets/images/seixal_praiadoporto5.jpg',
+      image: '/images/seixal_praiadoporto5.jpg',
       icon: '🏖️',
     },
     {
@@ -577,7 +577,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, food, bar, parking',
       description: 'Conhecida como "Jamaica" devido às palmeiras ao longo da promenade, esta praia oferece um cenário paradisíaco e tranquilo.',
-      image: '/src/assets/images/madeira033henrique-seruca.jpg',
+      image: '/images/madeira033henrique-seruca.jpg',
       icon: '🏖️',
     },
   ],
@@ -631,7 +631,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'none',
       description: 'Pequena praia de calhau junto ao cais da Faja do Mar, no Faial, acessível por trilhos.',
-      image: '/src/assets/images/Cais-do-Faial-Faja-do-Mar-1.jpg',
+      image: '/images/Cais-do-Faial-Faja-do-Mar-1.jpg',
       icon: '🏝️',
     },
     {
@@ -641,7 +641,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'cablecar',
       description: 'Área protegida com fajãs agrícolas, cascatas e acesso por teleférico ou trilho.',
-      image: '/src/assets/images/teleferico-rocha-do-navio-francisco-correoa.jpg',
+      image: '/images/teleferico-rocha-do-navio-francisco-correoa.jpg',
       icon: '🚡',
     },
     {
@@ -651,7 +651,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, food, bar, shower, parking',
       description: 'Complexo com três piscinas, lagoa natural e acesso ao mar (não recomendado para banhistas).',
-      image: '/src/assets/images/saojorge_fosdaribeira5.jpg',
+      image: '/images/saojorge_fosdaribeira5.jpg',
       icon: '🏖️',
     },
   ],
@@ -663,7 +663,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'bar, wc, duches',
       description: 'Pequena extensão de areia junto ao porto de Porto Santo, ideal para um mergulho rápido após a chegada.',
-      image: '/src/assets/images/dji_0671.jpg',
+      image: '/images/dji_0671.jpg',
       icon: '🏖️',
     },
     {
@@ -673,7 +673,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'none',
       description: 'Praia de areia dourada, que cobre desde o porto de abrigo até ao icónico cais da Vila Baleira.',
-      image: '/src/assets/images/praia13-vitor-reinecke.jpg',
+      image: '/images/praia13-vitor-reinecke.jpg',
       icon: '🏖️',
     },
     {
@@ -683,7 +683,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, food, bar, lifeguard, parking',
       description: 'Praia a seguir ao cais, com várias infraestruturas de apoio, hoteis e proximidade ao centro da Vila Baleira.',
-      image: '/src/assets/images/portosanto_balnearios10.jpg',
+      image: '/images/portosanto_balnearios10.jpg',
       icon: '🏖️',
     },
     {
@@ -693,7 +693,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, food, bar, parking',
       description: 'Praia à saída da Vila Baleira, com estacionamento na estrada e um acesso pedonal que termina num bar de apoio nas dunas e um clima familiar, reservado e descontraído.',
-      image: '/src/assets/images/praia-do-porto-santo3_henrique.jpg',
+      image: '/images/praia-do-porto-santo3_henrique.jpg',
       icon: '🏖️',
     },
     {
@@ -703,7 +703,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, food, bar, lifeguard, parking',
       description: 'Mais conhecida pelo Bar do Henrique situado em cima das dunas, esta praia possui acessos às dunas com estacionamento, bares de apoio e uma ida ao mar descontraída e sem pedras.',
-      image: '/src/assets/images/portosanto_pedraspretas6.jpg',
+      image: '/images/portosanto_pedraspretas6.jpg',
       icon: '🏖️',
     },
     {
@@ -713,7 +713,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, food, bar, parking',
       description: 'Situada no final de um ribeiro que lhe dá nome, esta zona de praia possuí estacionamento, bares de apoio e um fácil acesso ao areal, perfeito para uma ida à praia para toda a família.',
-      image: '/src/assets/images/praia-ribeiro-salgado001-rui-melim.jpg',
+      image: '/images/praia-ribeiro-salgado001-rui-melim.jpg',
       icon: '🏖️',
     },
     {
@@ -723,7 +723,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'lifeguard',
       description: 'Situada a 4km da Vila Baleira, e junto a diversos hotéis, esta praia conjuga um extenso areal com uma grande exposição aos elementos o que causa por vezs grandes ondas.',
-      image: '/src/assets/images/praia-vila-baleira-ilhavisão-multimedia.jpg',
+      image: '/images/praia-vila-baleira-ilhavisão-multimedia.jpg',
       icon: '🏖️',
     },
     {
@@ -733,7 +733,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'wc, shower, food, bar, lifeguard, parking',
       description: 'Praia de areia na ponta oeste da ilha, com formações rochosas, pequenas piscinas naturais e vista para o Ilhéu da Cal.',
-      image: '/src/assets/images/praia-da-caelha003-rui-melim.jpg',
+      image: '/images/praia-da-caelha003-rui-melim.jpg',
       icon: '🏖️',
     },
     {
@@ -743,7 +743,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'parking',
       description: 'Praia de areia com dezenas de pequenas piscinas naturais, de acesso apenas a pé ou com veículos 4x4, convém frequentar com a maré baixa.',
-      image: '/src/assets/images/zimbralinhos porto santo_1.jpg',
+      image: '/images/zimbralinhos porto santo_1.jpg',
       icon: '🏖️',
     },
     {
@@ -753,7 +753,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'boat',
       description: 'Pequena enseada de calhau, perfeita para quem procura tranquilidade, acesso apenas a pé ou por barco.',
-      image: '/src/assets/images/zimbralinhos porto santo_1.jpg',
+      image: '/images/zimbralinhos porto santo_1.jpg',
       icon: '🏖️',
     },
     {
@@ -763,7 +763,7 @@ const BEACHES_BY_CONCELHO = {
       price: 'Grátis',
       facilities: 'parking',
       description: 'Pequena praia de calhau junto ao antigo porto de pesca dos Frades, com um ambiente isolado e tranquilo, ideal para quem procura um local menos frequentado.',
-      image: '/src/assets/images/portosanto_portodoferades21.jpg',
+      image: '/images/portosanto_portodoferades21.jpg',
       icon: '🏖️',
     },
   ],
