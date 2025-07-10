@@ -143,7 +143,7 @@ const App = () => {
     <div>
       <Header />
       <Hero onFindBeach={handleFindBeach} />
-      <Features />
+      <Features onFindBeach={handleFindBeach} />
       <section id="rankings-container" ref = {rankingsContainerRef}>
         {isLoading ? (
           <div className="loading">
