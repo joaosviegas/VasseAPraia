@@ -58,19 +58,19 @@ const Features = ({ onFindBeach }) => {
             </p>
             <div className="feature-points">
               <div className="point">
-                <i className="fa-solid fa-sitemap" style={{ fontSize: '2rem', color: '#FFEB3B' }}></i>
+                <i className="fa-solid fa-sitemap" style={{ fontSize: '2rem', color: '#1a73e8' }}></i>
                 <span>Previsões, webcams e praias tudo num sitio só</span>
               </div>
               <div className="point">
-                <i className="fa-solid fa-umbrella-beach" style={{ fontSize: '2rem', color: '#FFEB3B' }}></i>
+                <i className="fa-solid fa-umbrella-beach" style={{ fontSize: '2rem', color: '#1a73e8' }}></i>
                 <span>Classificação a partir de previsões em tempo real</span>               
               </div>
               <div className="point">
-                <i className="fa-solid fa-video" style={{ fontSize: '2rem', color: '#FFEB3B' }}></i>
+                <i className="fa-solid fa-video" style={{ fontSize: '2rem', color: '#1a73e8' }}></i>
                 <span>Transmições de webcams em tempo real</span>
               </div>
               <div className="point">
-                <i className="fa-solid fa-info" style={{ fontSize: '2rem', color: '#FFEB3B' }}></i>
+                <i className="fa-solid fa-info" style={{ fontSize: '2rem', color: '#1a73e8' }}></i>
                 <span>Informações sobre infraestruturas e acessibilidade de cada praia</span>
               </div>
             </div>

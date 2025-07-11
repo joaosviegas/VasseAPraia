@@ -100,10 +100,6 @@
   background-color: rgb(243, 247, 254);
 }
 
-.feature-row.reverse .point i {
-  background-color: rgb(255, 250, 219);
-}
-
 /* Button */
 .cta-button {
   background-color: #ffeb3b;
