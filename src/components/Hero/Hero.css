@@ -1,7 +1,10 @@
 .hero {
+  min-height: 75vh;
   background: linear-gradient(135deg, #ffeb3b, #2196f3);
   color: white;
-  padding: 150px 20px 100px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -29,5 +32,26 @@
 
 .cta-button:hover {
   background-color: #fdd835;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.know-more-button {
+  margin-left: 24px;
+  color: #333;
+  border: 2px solid #333;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.know-more-button:hover {
+  border: none;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
