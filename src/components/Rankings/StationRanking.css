@@ -1,0 +1,158 @@
+/* StationRanking.css */
+
+.station-ranking {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-out;
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+}
+
+.station-ranking.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+}
+
+.station-ranking.visible:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.station-ranking:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.station-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: white;
+  position: relative;
+}
+
+.station-rank {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.station-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  flex-grow: 1;
+}
+
+.warning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: 8px;
+  font-size: 1rem;
+}
+
+.wind-warning {
+  background-color: #ff9800;
+  color: white;
+}
+
+.rain-warning {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.station-details {
+  padding: 20px;
+}
+
+.metrics-primary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.metric {
+  text-align: center;
+  flex: 1;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.metric-value.excellent {
+  color: #4caf50;
+}
+
+.metric-value.good {
+  color: #8bc34a;
+}
+
+.metric-value.moderate {
+  color: #f57c00;
+}
+
+.metric-value.poor {
+  color: #ff5722;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.metrics-secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.metrics-secondary p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.metrics-secondary i {
+  width: 20px;
+  color: #1a73e8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .station-ranking.visible:hover {
+    transform: scale(1.02);
+  }
+  
+  .metrics-secondary {
+    grid-template-columns: 1fr;
+  }
+  
+  .station-header {
+    padding: 10px 15px;
+  }
+  
+  .station-details {
+    padding: 15px;
+  }
+}

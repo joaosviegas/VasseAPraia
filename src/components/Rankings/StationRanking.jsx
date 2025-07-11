@@ -1,35 +1,64 @@
 import React from 'react';
-import './Rankings.css';
+import Tooltip from '../common/Tooltip';
+import './StationRanking.css';
 
-const StationRanking = ({ rank, name, details, warnings }) => {
-  return (
-    <div className="station-ranking">
-      <div className="station-header">
-        <div className="station-rank">{rank}</div>
-        <h3>{name}</h3>
-        {warnings && (
-  <span 
-    className={`warning ${warnings.type}`}
-    data-tooltip={
-      warnings.type === 'wind-warning' 
-        ? 'Aviso de ventos fortes (>20 km/h)' 
-        : warnings.type === 'rain-warning' 
-        ? 'Aviso de chuva (>10 mm)' 
-        : 'Aviso'
+const StationRanking = ({ 
+  station, 
+  index, 
+  onStationClick,
+  getComfortClass,
+  getWarningIcons 
+}) => {
+  const comfortClass = getComfortClass(station.comfort_index);
+  const warnings = getWarningIcons(station.warnings);
+
+  const handleClick = () => {
+    if (onStationClick) {
+      onStationClick(station);
     }
-  >
-    {warnings.label}
-  </span>
-)}
+  };
+
+  return (
+    <div 
+      className="station-ranking" 
+      style={{ transitionDelay: `${index * 50}ms` }} 
+      onClick={handleClick}
+    >
+      <div className="station-header">
+        <span className="station-rank">{index + 1}</span>
+        <h3>{station.name}</h3>
+        {warnings}
       </div>
       <div className="station-details">
         <div className="metrics-primary">
-          {details.map((detail, index) => (
-            <div className="metric" key={index}>
-              <span className="metric-value">{detail.value}</span>
-              <span className="metric-label">{detail.label}</span>
-            </div>
-          ))}
+          <div className="metric">
+            <span className={`metric-value ${comfortClass}`}>{station.points}</span>
+            <span className="metric-label">Pontuação</span>
+          </div>
+          <div className="metric">
+            <span className="metric-value">
+              {station.max_temp === -Infinity ? 'N/A' : station.max_temp + '°C'}
+            </span>
+            <span className="metric-label">Temperatura Máxima</span>
+          </div>
+        </div>
+        <div className="metrics-secondary">
+          <p>
+            <i className="fas fa-map-marker-alt"></i> 
+            <strong>Concelho:</strong> {station.city}
+          </p>
+          <p>
+            <i className="fas fa-thermometer-half"></i> 
+            <strong>Horas acima de 20°C:</strong> {station.hours_above_20}
+          </p>
+          <p>
+            <i className="fas fa-cloud-rain"></i> 
+            <strong>Precipitação atual:</strong> {station.precipitation.toFixed(1)} mm
+          </p>
+          <p>
+            <i className="fas fa-wind"></i> 
+            <strong>Velocidade média do Vento:</strong> {station.wind_speed.toFixed(1)} km/h
+          </p>
         </div>
       </div>
     </div>
