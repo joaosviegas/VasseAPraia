@@ -8,7 +8,6 @@ import Footer from './components/Footer/Footer';
 import RollingBlock from './components/RollingBlock/RollingBlock';
 import InteractiveMap from './components/InteractiveMap/InteractiveMap';
 import './App.css';
-import { formatDateTime } from './utils/dateUtils';
 
 import logo1 from '/images/calheta-municipio-logo.png';
 import logo2 from '/images/camara-de-lobos-municipio-logo.png';
@@ -162,11 +161,6 @@ const App = () => {
           </div>
         ) : rankingsData ? (
           <>
-            <h2 className="rankings-title">Melhores Sítios para fazer Praia Hoje</h2>
-            <div className="rankings-header">
-              <p className="update-time">Atualizado às: {formatDateTime(lastUpdated)}</p>
-            </div>
-            
             <div className="content-wrapper">
               <div className="rankings-wrapper">
 

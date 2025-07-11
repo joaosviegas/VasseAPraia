@@ -6,6 +6,20 @@
   text-align: center;
 }
 
+.rankings-tag {
+  display: inline-block;
+  background: linear-gradient(to right, #2196f3, #1976d2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .rankings-title {
   font-size: 4rem;
   margin-bottom: 20px;

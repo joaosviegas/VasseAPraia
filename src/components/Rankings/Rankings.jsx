@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import Tooltip from '../common/Tooltip';
 import StationRanking from './StationRanking';
 import './Rankings.css';
+import { formatDateTime } from '../../utils/dateUtils';
+
 
 const Rankings = ({ rankingsData = [], lastUpdated, onStationClick }) => {
   useEffect(() => {
@@ -48,6 +50,11 @@ const Rankings = ({ rankingsData = [], lastUpdated, onStationClick }) => {
 
   return (
     <section className="rankings">
+      <div className="rankings-tag">Rankings</div>
+      <h2 className="rankings-title">Melhores Sítios para fazer Praia Hoje</h2>
+      <div className="rankings-header">
+        <p className="update-time">Atualizado às: {formatDateTime(lastUpdated)}</p>
+      </div>
       <div className="rankings-list">
         {rankingsData.map((station, index) => (
           <StationRanking
