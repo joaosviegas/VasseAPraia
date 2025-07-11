@@ -37,7 +37,7 @@ const StationRanking = ({
           </div>
           <div className="metric">
             <span className="metric-value">
-              {station.max_temp === -Infinity ? 'N/A' : station.max_temp + '°C'}
+              {station.max_temp === -Infinity ? 'Estação Indisponível' : station.max_temp + '°C'}
             </span>
             <span className="metric-label">Temperatura Máxima</span>
           </div>
