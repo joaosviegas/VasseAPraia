@@ -162,6 +162,7 @@ const App = () => {
           </div>
         ) : rankingsData ? (
           <>
+            <div className="rankings-tag">Rankings</div>
             <h2 className="rankings-title">Melhores Sítios para fazer Praia Hoje</h2>
             <div className="rankings-header">
               <p className="update-time">Atualizado às: {formatDateTime(lastUpdated)}</p>
