@@ -32,7 +32,7 @@ const Features = ({ onFindBeach }) => {
                 <span>Previsões que não correspondem ao estado atual do tempo</span>
               </div>
             </div>
-            <button id="feature-button" className="cta-button" onCLick={onFindBeach}>Experimenta agora<i className="fa-solid fa-arrow-right" style={{ padding: "0px 0px 0px 8px"}}></i></button>
+            <button id="feature-button" className="cta-button" onClick={onFindBeach}>Experimenta agora<i className="fa-solid fa-arrow-right" style={{ padding: "0px 0px 0px 8px"}}></i></button>
           </div>
           <div className="feature-image">
             <div className="image-placeholder">
@@ -74,7 +74,7 @@ const Features = ({ onFindBeach }) => {
                 <span>Informações sobre infraestruturas e acessibilidade de cada praia</span>
               </div>
             </div>
-            <button id="feature-button" className="cta-button" onCLick={onFindBeach}>Vasse à Praia<i className="fa-solid fa-arrow-right" style={{ padding: "0px 0px 0px 8px"}}></i></button>
+            <button id="feature-button" className="cta-button" onClick={onFindBeach}>Vasse à Praia<i className="fa-solid fa-arrow-right" style={{ padding: "0px 0px 0px 8px"}}></i></button>
           </div>
           <div className="feature-image">
             <div className="image-placeholder">
