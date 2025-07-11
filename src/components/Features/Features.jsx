@@ -37,8 +37,7 @@ const Features = ({ onFindBeach }) => {
           <div className="feature-image">
             <div className="image-placeholder">
               <div className="placeholder-content">
-                <div className="placeholder-icon">🏖️</div>
-                <span>Imagem: Pessoa frustrada procurando informações no telemóvel</span>
+                <img src="/undraw_relax-mode.svg" alt="Interface da aplicação VasseaPraia" className="app-interface-image" />
               </div>
             </div>
           </div>
@@ -79,8 +78,7 @@ const Features = ({ onFindBeach }) => {
           <div className="feature-image">
             <div className="image-placeholder">
               <div className="placeholder-content">
-                <div className="placeholder-icon">📱</div>
-                <span>Imagem: Interface da aplicação VasseaPraia</span>
+                <img src="/undraw_landing.svg" alt="Interface da aplicação VasseaPraia" className="app-interface-image" />
               </div>
             </div>
           </div>
