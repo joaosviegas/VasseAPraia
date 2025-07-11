@@ -3,7 +3,7 @@ import './Features.css';
 
 const Features = ({ onFindBeach }) => {
   return (
-    <section className="features-section">
+    <section id="features" className="features-section">
       <div className="container">
         
         {/* Primera feature - Pain Points */}
