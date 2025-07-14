@@ -1,21 +1,62 @@
+/* Hero.css */
+
 .hero {
-  min-height: 75vh;
+  min-height: 80vh;
   background: linear-gradient(135deg, #ffeb3b, #2196f3);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: transparent;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border: 2px solid transparent;
 }
 
 .hero-content h1 {
   font-size: 5rem;
-  margin: 0;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 .hero-content p {
   font-size: 1.8rem;
-  margin: 10px 0 20px;
+  margin: 10px 0 30px;
+  line-height: 1.4;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .cta-button {
@@ -27,31 +68,103 @@
   font-weight: 600;
   border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 160px;
+  justify-content: center;
 }
 
 .cta-button:hover {
   background-color: #fdd835;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-
 }
 
 .know-more-button {
-  margin-left: 24px;
   color: #333;
+  background-color: transparent;
   border: 2px solid #333;
   padding: 15px 30px;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-
+  transition: all 0.3s ease;
+  min-width: 160px;
 }
 
 .know-more-button:hover {
-  border: none;
+  border-color: white;
   background-color: white;
+  color: #333;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    padding: 15px;
+  }
+  
+  .hero-content {
+    padding: 0 15px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-content p {
+    font-size: 1.4rem;
+    margin: 15px 0 25px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .cta-button,
+  .know-more-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 18px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 85vh;
+    padding: 10px;
+  }
+  
+  .hero-content {
+    padding: 0 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+  }
+  
+  .hero-buttons {
+    gap: 12px;
+  }
+  
+  .cta-button,
+  .know-more-button {
+    padding: 16px 25px;
+    font-size: 1rem;
+    min-width: 140px;
+  }
 }
