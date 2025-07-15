@@ -13,7 +13,7 @@ const Hero = ({ onFindBeach }) => {
   return (
     <section className="hero">
       <div className="hero-content">
-        <div className="hero-tag">AInda não sabes onde fazer praia hoje?</div>
+        <div className="hero-tag">Ainda não sabes onde fazer praia hoje?</div>
         <h1>Vasse à Praia?</h1>
         <p>Encontra o sítio com melhor tempo para fazer praia agora!</p>
         <div className="hero-buttons">
