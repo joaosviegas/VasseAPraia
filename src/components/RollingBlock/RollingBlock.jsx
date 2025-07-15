@@ -6,9 +6,7 @@ const RollingBlock = ({ data }) => {
     <div className="rolling-block">
 
       <div className="rolling-block-header">
-        <div className="rolling-block-title">
-          <h3>Com a presença de</h3>
-        </div>
+        <div className="rolling-tag">Com a Presença de:</div>
       </div>
 
       <div className="slider">
