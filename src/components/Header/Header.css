@@ -1,26 +1,37 @@
-/* General header styles */
+/* Modern floating header with sticky behavior */
 header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 15px;
+  left: 100px;
+  right: 100px;
   z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 12px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .logo img {
-  height: 40px;
+  height: 32px;
   width: auto;
+  max-width: 300px;
 }
 
 /* Desktop Navigation */
@@ -34,6 +45,7 @@ header {
   padding: 0;
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .desktop-menu button {
@@ -41,69 +53,201 @@ header {
   border: none;
   color: #333;
   font-weight: 500;
+  font-size: 0.95rem;
   cursor: pointer;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .desktop-menu button:hover {
   color: #1a73e8;
+  background-color: rgba(26, 115, 232, 0.1);
 }
 
 .desktop-menu button.active {
   color: #1a73e8;
   font-weight: 600;
+  background-color: rgba(26, 115, 232, 0.15);
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu - Modern 3-line design */
 .hamburger-menu {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-menu:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu span {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu::before {
+  transform: translateY(-6px);
+}
+
+.hamburger-menu::after {
+  transform: translateY(6px);
+}
+
+.hamburger-menu span {
+  margin: 2px 0;
+}
+
+/* Animated hamburger when open */
+.hamburger-menu.open::before {
+  transform: rotate(45deg) translate(2px, 4px);
+}
+
+.hamburger-menu.open::after {
+  transform: rotate(-45deg) translate(2px, -4px);
+}
+
+.hamburger-menu.open span {
+  opacity: 0;
 }
 
 /* Mobile Menu */
 .mobile-menu {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 10px);
   left: 0;
   right: 0;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobile-menu.open {
-  display: flex;
+  display: block;
 }
 
 .mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
   flex-direction: column;
-  gap: 1rem;
+}
+
+.mobile-menu li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mobile-menu li:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu button {
+  background: none;
+  border: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 16px 20px;
+  width: 100%;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu button:hover {
+  color: #1a73e8;
+  background-color: rgba(26, 115, 232, 0.1);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  header {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+  
+  .header-content {
+    padding: 10px 16px;
+  }
+  
+  .logo img {
+    height: 32px;
+  }
+  
   .desktop-menu {
-    display: none; /* Hide desktop navigation on mobile */
+    display: none;
   }
 
   .hamburger-menu {
-    display: block; /* Show hamburger menu on mobile */
+    display: flex;
   }
 }
 
-@media (min-width: 769px) {
-  .mobile-menu {
-    display: none; /* Hide mobile menu on desktop */
+@media (max-width: 480px) {
+  header {
+    top: 8px;
+    left: 8px;
+    right: 8px;
   }
+  
+  .header-content {
+    padding: 8px 12px;
+  }
+  
+  .logo img {
+    height: 28px;
+    max-width: 160px;
+  }
+}
 
-  .hamburger-menu {
-    display: none; /* Hide hamburger menu on desktop */
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add padding to body to account for fixed header */
+body {
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
   }
 }

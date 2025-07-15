@@ -16,28 +16,31 @@ const Header = () => {
     <header>
       <div className="header-content">
         <a href="/" className="logo">
-          <img src="/logo.svg" alt="Vasse à Praia Logo" />
+          <img src="/vasse-a-praia-logo.svg" alt="Vasse à Praia Logo" />
         </a>
+        
         {/* Desktop Navigation */}
         <nav className="desktop-menu">
           <ul>
             <li><button onClick={() => handleScroll('features')}>Sobre</button></li>
             <li><button onClick={() => handleScroll('interactive-map')}>Explorar Praias</button></li>
-            <li><button onClick={() => handleScroll('contact')}>Contactos</button></li>
           </ul>
         </nav>
-        {/* Hamburger Menu for Mobile */}
+        
+        {/* Modern Hamburger Menu for Mobile */}
         <button
-          className="hamburger-menu"
+          className={`hamburger-menu ${isMobileMenuOpen ? 'open' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
         >
-          ☰
+          <span></span>
         </button>
-        <nav className={isMobileMenuOpen ? 'mobile-menu open' : 'mobile-menu'}>
+        
+        {/* Mobile Menu */}
+        <nav className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <ul>
             <li><button onClick={() => handleScroll('features')}>Sobre</button></li>
             <li><button onClick={() => handleScroll('interactive-map')}>Explorar Praias</button></li>
-            <li><button onClick={() => handleScroll('contact')}>Contactos</button></li>
           </ul>
         </nav>
       </div>
