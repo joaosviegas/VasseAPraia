@@ -129,21 +129,52 @@ const handleRegionClick = (region) => {
  
 return (
   <div className="map-section" id="interactive-map">
-    <h2>Mapa de Praias da Madeira</h2>
+    <h2>Mapa de Praias</h2>
     
     <div className="map-container">
       <div className="svg-container">
-        <img src={MadeiraSvg} className="base-map" alt="Mapa da Madeira" />
-        <img src={MadeiraConcelhosSvg} className={`concelhos-map ${activeRegion ? 'with-active' : ''}`} alt="Concelhos da Madeira" />
+        {/* Convert img to svg with viewBox */}
+        <svg 
+          className="base-map" 
+          viewBox="0 0 801 373"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <image 
+            href={MadeiraSvg} 
+            x="0" 
+            y="0" 
+            width="801" 
+            height="373"
+            preserveAspectRatio="xMidYMid meet"
+          />
+        </svg>
         
-        <svg className="interactive-areas" viewBox="0 0 801 373">
+        <svg 
+          className={`concelhos-map ${activeRegion ? 'with-active' : ''}`}
+          viewBox="0 0 801 373"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <image 
+            href={MadeiraConcelhosSvg} 
+            x="0" 
+            y="0" 
+            width="801" 
+            height="373"
+            preserveAspectRatio="xMidYMid meet"
+          />
+        </svg>
+        
+        <svg 
+          className="interactive-areas" 
+          viewBox="0 0 801 373"
+          preserveAspectRatio="xMidYMid meet"
+        >
           {regions.map(region => (
             <React.Fragment key={region.id}>
               <path
                 d={region.path}
                 className={`region-area ${activeRegion?.id === region.id ? 'active' : ''} ${clickedRegion?.id === region.id ? 'active' : ''}`}
                 onMouseEnter={(e) => {
-                  // Calculate the center of the Concelho dynamically
                   const bbox = e.currentTarget.getBBox();
                   const centerX = bbox.x + bbox.width / 2;
                   const centerY = bbox.y + bbox.height / 2;
@@ -162,56 +193,54 @@ return (
                 onClick={() => handleRegionClick(region)}
               />
 
-              {/* Render tooltip and connecting lines when region is active */}
+              {/* Tooltip rendering - same as before */}
               {activeRegion?.id === region.id && (
-              <>
-                {/* Determine line direction based on isLeft */}
-                {(() => {
-                  const horizontalOffset = region.isLeft ? 60 : -60; // Adjust line direction
-                  const tooltipX = activeRegion.tooltipPosition.x + (region.isLeft ? -75 : -75); // Tooltip position adjustment
+                <>
+                  {(() => {
+                    const isMobile = window.innerWidth <= 768;
+                    const horizontalOffset = region.isLeft ? (isMobile ? 40 : 60) : (isMobile ? -40 : -60);
+                    const tooltipX = activeRegion.tooltipPosition.x + (region.isLeft ? -75 : -75);
+                    
+                    return (
+                      <>
+                        <path
+                          d={`M ${activeRegion.centerX} ${activeRegion.centerY}
+                            L ${activeRegion.tooltipPosition.x + horizontalOffset} ${activeRegion.tooltipPosition.y - (isMobile ? 15 : 20)}
+                            L ${activeRegion.tooltipPosition.x - horizontalOffset} ${activeRegion.tooltipPosition.y - (isMobile ? 15 : 20)}`}
+                          stroke="#1a73e8"
+                          strokeWidth={isMobile ? "3" : "2"}
+                          fill="none"
+                          style={{
+                            strokeDasharray: 300,
+                            strokeDashoffset: 300,
+                            animation: 'drawLine 0.5s ease-out forwards',
+                            pointerEvents: 'none'
+                          }}
+                        />
 
-                  return (
-                    <>
-                      {/* Line: From Concelho center to a 45-degree midpoint and then horizontally */}
-                      <path
-                        d={`M ${activeRegion.centerX} ${activeRegion.centerY}
-                          L ${activeRegion.tooltipPosition.x + horizontalOffset} ${activeRegion.tooltipPosition.y - 20}
-                          L ${activeRegion.tooltipPosition.x - horizontalOffset} ${activeRegion.tooltipPosition.y - 20}`}
-                        stroke="#1a73e8"
-                        strokeWidth="2"
-                        fill="none"
-                        style={{
-                          strokeDasharray: 300,
-                          strokeDashoffset: 300,
-                          animation: 'drawLine 0.5s ease-out forwards',
-                          pointerEvents: 'none'
-                        }}
-                      />
-
-                      {/* Tooltip */}
-                      <foreignObject
-                        x={tooltipX}
-                        y={clickedRegion?.id === region.id ? clickedRegion.tooltipPosition.y - 50 : activeRegion.tooltipPosition.y - 50}
-                        width="180"
-                        height="100"
-                      >
-                        <div className="region-tooltip">
-                          <div className="tooltip-content">
-                            <strong>{clickedRegion?.id === region.id ? clickedRegion.name : activeRegion.name}</strong>
-                            {(clickedRegion?.id === region.id ? clickedRegion.beaches : activeRegion.beaches) && (
-                              <p className="tooltip-beaches">{clickedRegion?.id === region.id ? clickedRegion.beaches : activeRegion.beaches} praias nesta região</p>
-                            )}
-                            {(clickedRegion?.id === region.id ? clickedRegion.description : activeRegion.description) && (
-                              <p className="tooltip-description">{clickedRegion?.id === region.id ? clickedRegion.description : activeRegion.description}</p>
-                            )}
+                        <foreignObject
+                          x={tooltipX}
+                          y={clickedRegion?.id === region.id ? clickedRegion.tooltipPosition.y - (isMobile ? 40 : 50) : activeRegion.tooltipPosition.y - (isMobile ? 40 : 50)}
+                          width={isMobile ? "160" : "180"}
+                          height={isMobile ? "80" : "100"}
+                        >
+                          <div className="region-tooltip">
+                            <div className="tooltip-content">
+                              <strong>{clickedRegion?.id === region.id ? clickedRegion.name : activeRegion.name}</strong>
+                              {(clickedRegion?.id === region.id ? clickedRegion.beaches : activeRegion.beaches) && (
+                                <p className="tooltip-beaches">{clickedRegion?.id === region.id ? clickedRegion.beaches : activeRegion.beaches} praias nesta região</p>
+                              )}
+                              {(clickedRegion?.id === region.id ? clickedRegion.description : activeRegion.description) && (
+                                <p className="tooltip-description">{clickedRegion?.id === region.id ? clickedRegion.description : activeRegion.description}</p>
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      </foreignObject>
-                    </>
-                  );
-                })()}
-              </>
-            )}
+                        </foreignObject>
+                      </>
+                    );
+                  })()}
+                </>
+              )}
             </React.Fragment>
           ))}
         </svg>

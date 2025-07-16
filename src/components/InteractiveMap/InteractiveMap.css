@@ -1,125 +1,270 @@
 .map-section {
-    padding: 40px 24px 0px;
-    text-align: center;
-    background-color: white;
+  padding: 40px 24px 0px;
+  text-align: center;
+  background-color: white;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.map-info {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 100px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.svg-container {
+  position: relative;
+  width: 100%;
+  height: 510px;
+  padding: 20px;
+  background-color: #e6f7ff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.base-map,
+.concelhos-map,
+.interactive-areas {
+  position: absolute;
+  top: 20px;
+  left: 20px; 
+  width: calc(100% - 40px); 
+  height: calc(100% - 40px);
+  transform: scale(1.05);
+  transform-origin: center center;
+}
+
+.base-map path {
+  fill: #8abfe6;
+  stroke: #ffffff;
+  stroke-width: 1;
+}
+
+.concelhos-map path {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 1;
+  transition: stroke 0.3s ease;
+}
+
+.concelhos-map.with-active path {
+  stroke: rgba(255, 255, 255, 0.3);
+}
+
+.region-area {
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 2;
+}
+
+.region-area:hover {
+  fill: rgba(26, 115, 232, 0.3);
+  stroke: #1a73e8;
+}
+
+.region-area.active {
+  fill: rgba(26, 115, 232, 0.4);
+  stroke: #1a73e8;
+  stroke-width: 2;
+  filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.3));
+  transform: translateY(-3px) scale(1.02);
+}
+
+.region-area.clicked {
+  fill: rgba(26, 115, 232, 0.6);
+  stroke: #0d47a1; 
+  stroke-width: 3; 
+  transform: translateY(-5px) scale(1.05); 
+  transition: all 0.3s ease-out; 
+}
+
+.map-section h2 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #2196f3, #1976d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.region-tooltip {
+  padding: 8px 12px;
+  font-size: 14px;
+  pointer-events: none;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.tooltip-content strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: #1a73e8;
+}
+
+.tooltip-beaches {
+  font-size: 14px;
+  color: #1a73e8;
+  margin: 0;
+}
+
+.tooltip-description {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
   }
+}
 
-
-  .map-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .map-section {
+    padding: 30px 15px 0px;
   }
   
-  .map-info {
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    padding: 20px;
-    min-height: 100px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .map-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .map-container {
+    padding: 15px;
   }
   
   .svg-container {
-    position: relative;
-    width: 100%;
-    height: 510px;
+    height: 300px;
     padding: 20px;
-    background-color: #e6f7ff;
-    border-radius: 10px;
-    overflow: hidden;
   }
   
   .base-map,
   .concelhos-map,
   .interactive-areas {
-    position: absolute;
-    top: 20px;
-    left: 20px; 
-    width: calc(100% - 40px); 
-    height: calc(100% - 40px);
+    top: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
     transform: scale(1.05);
-    transform-origin: center center;
-  }
-  
-  .base-map path {
-    fill: #8abfe6;
-    stroke: #ffffff;
-    stroke-width: 1;
-  }
-  
-  .concelhos-map path {
-    fill: transparent;
-    stroke: rgba(255, 255, 255, 0.5);
-    stroke-width: 1;
-    transition: stroke 0.3s ease;
-  }
-  
-  .concelhos-map.with-active path {
-    stroke: rgba(255, 255, 255, 0.3);
   }
   
   .region-area {
-    transition: all 0.3s ease-out;
-    cursor: pointer;
-    fill: transparent;
-    
+    stroke-width: 3;
+    /* Increase touch target size */
+    stroke: rgba(26, 115, 232, 0.1);
+  }
+  
+  .region-area:hover {
+    fill: rgba(26, 115, 232, 0.4);
+    stroke: #1a73e8;
+    stroke-width: 3;
   }
   
   .region-area.active {
-    fill: rgba(26, 115, 232, 0.4);
-    stroke: #1a73e8;
-    stroke-width: 2;
-    filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.3));
-    transform: translateY(-3px) scale(1.02);
-  }
-
-  .region-area.clicked {
-    fill: rgba(26, 115, 232, 0.6);
-    stroke: #0d47a1; 
-    stroke-width: 3; 
-    transform: translateY(-5px) scale(1.05); 
-    transition: all 0.3s ease-out; 
+    stroke-width: 4;
+    transform: translateY(-2px) scale(1.03);
   }
   
-  .map-section h2 {
-    text-align: center;
-    font-size: 4rem;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #2196f3, #1976d2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .region-area.clicked {
+    stroke-width: 5;
+    transform: translateY(-3px) scale(1.06);
   }
-
+  
   .region-tooltip {
-    padding: 8px 12px;
-    font-size: 14px;
-    pointer-events: none;
-    text-align: centre;
+    padding: 6px 10px;
+    font-size: 12px;
   }
   
   .tooltip-content strong {
-    display: block;
-    margin-bottom: 4px;
     font-size: 16px;
-    color: #1a73e8;
   }
-
+  
   .tooltip-beaches {
-    font-size: 14px;
-    color: #1a73e8;
+    font-size: 12px;
   }
   
   .tooltip-description {
-    font-size: 12px;
-    color: #555;
+    font-size: 11px;
   }
+}
 
-  @keyframes drawLine {
-    to {
-      stroke-dashoffset: 0; /* Fully draw the line */
-    }
+@media (max-width: 480px) {
+  .map-section {
+    padding: 20px 10px 0px;
   }
+  
+  .map-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .map-container {
+    padding: 10px;
+  }
+  
+  .svg-container {
+    height: 200px;
+    padding: 10px;
+  }
+  
+  .base-map,
+  .concelhos-map,
+  .interactive-areas {
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    transform: scale(1.05);
+  }
+  
+  .region-area {
+    stroke-width: 4;
+    /* Even larger touch targets on mobile */
+    stroke: rgba(26, 115, 232, 0.15);
+  }
+  
+  .region-area:hover {
+    stroke-width: 5;
+  }
+  
+  .region-area.active {
+    stroke-width: 6;
+    transform: translateY(-2px) scale(1.04);
+  }
+  
+  .region-area.clicked {
+    stroke-width: 7;
+    transform: translateY(-3px) scale(1.08);
+  }
+  
+  .region-tooltip {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+  
+  .tooltip-content strong {
+    font-size: 13px;
+  }
+  
+  .tooltip-beaches {
+    font-size: 11px;
+  }
+  
+  .tooltip-description {
+    font-size: 10px;
+  }
+}
